@@ -1,0 +1,26 @@
+{
+	"name": "greenpeace/planet4-child-theme-australiapacific",
+	"description": "P4 child theme for Greenpeace Australia Pacific website",
+	"type":"wordpress-theme",
+	"minimum-stability" : "stable",
+	"license": "GPL-3.0+",
+	"repositories": [
+		{
+			"type": "composer",
+			"url": "https://wpackagist.org"
+		}
+	],
+	"support": {
+		"source": "https://github.com/greenpeace/planet4-child-theme-australiapacific"
+	},
+	"extra": {
+		"installer-paths": {
+			"../../plugins/{$name}/": [
+				"wpackagist-plugin/*",
+				"type:wordpress-plugin"
+			]
+		}
+	},
+	"require": {
+	}
+}
