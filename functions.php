@@ -10,5 +10,4 @@ function enqueue_child_styles() {
     $css_creation = filectime(get_stylesheet_directory() . '/style.css');
 
     wp_enqueue_style( 'child-style', get_stylesheet_directory_uri() . '/style.css', [], $css_creation );
-    wp_enqueue_style( 'custom-style', get_stylesheet_directory_uri() . '/dist/custom.css', [], $css_creation );
 }
