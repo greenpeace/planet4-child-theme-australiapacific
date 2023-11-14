@@ -3,3 +3,10 @@
   --font-family-tertiary: 'Work Sans';
   --font-family-button: 'Work Sans';
 }
+
+h3,
+h4,
+h5,
+h6{
+  font-family: var(--font-family-secondary), sans-serif;
+}
