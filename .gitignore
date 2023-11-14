@@ -7,6 +7,11 @@ node_modules/
 test-blocks/
 
 # ignore all the compiler
+<<<<<<< HEAD
 gpap.css
+=======
+style.css
+style-rtl.css
+>>>>>>> 703bd6b (adding scss compatibility and introducing Tailwind. Adding postCSS compiler scripts)
 
 .DS_Store
