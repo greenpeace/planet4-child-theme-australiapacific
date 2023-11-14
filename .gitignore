@@ -7,7 +7,6 @@ node_modules/
 test-blocks/
 
 # ignore all the compiler
-style.css
-style-rtl.css
+gpap.css
 
 .DS_Store
