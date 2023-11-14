@@ -1,0 +1,13 @@
+vendor
+node_modules/
+/languages/*.po~
+/languages/*.pot~
+
+/.cache
+test-blocks/
+
+# ignore all the compiler
+style.css
+style-rtl.css
+
+.DS_Store

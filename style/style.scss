@@ -11,3 +11,21 @@ License URI: https://www.gnu.org/licenses/gpl-3.0.html
 Tags: light, accessibility-ready
 Text Domain: planet4-child-theme-australiapacific
 */
+
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;700&display=swap');
+
+/*!
+Import Tailwind
+*/
+@import "tailwindcss/components.css";
+@import "tailwindcss/utilities.css";
+@import "tailwindcss/base.css";
+
+/*!
+Import Custom Styling
+*/
+@import "./elements.scss";
+@import "./pattele.scss";
+@import "./footer.scss";
+@import "./header.scss";
+@import "./global.scss";
