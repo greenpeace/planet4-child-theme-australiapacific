@@ -1,0 +1,57 @@
+.search-button {
+    @apply p-2 rounded cursor-pointer text-white bg-gray-900;
+    .dashicons {
+        @apply mr-1;
+    }
+    &:hover {
+        @apply bg-gray-700;
+    }
+}
+
+.top-bar {
+    .full-screen-search{
+        @apply bg-brand z-99 smooth-transition fixed top-0 left-0 right-0 bottom-0;
+
+        .modal-dismiss{
+            @apply p-4 top-0 right-0 text-white;
+            
+            .close-search-modal {
+                @apply text-4xl;
+            }
+        }
+
+        .search-form{
+            @apply text-2xl text-white;
+            @screen md {
+                @apply w-1/2;
+            }
+        }
+        
+        .search-input{
+            @apply border-0 border-b-2 border-white bg-transparent text-white;
+            ::-webkit-input-placeholder,
+              ::-moz-placeholder,
+              :-ms-input-placeholder,
+              :-moz-placeholder {
+                color: white;
+              }
+            &:focus {
+                @apply border-0;
+            }
+        }
+
+        .search-button {
+            @apply btn-alternative bg-transparent;
+            ::-webkit-input-placeholder,
+            :-ms-input-placeholder,
+            ::placeholder { /* Edge */
+                color: white;
+              }
+              
+            .dashicons {
+                @apply mr-1;
+            }
+        }
+
+    }
+}
