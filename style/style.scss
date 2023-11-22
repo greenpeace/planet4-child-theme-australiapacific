@@ -15,13 +15,6 @@ Text Domain: planet4-child-theme-australiapacific
 @import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;700&display=swap');
 
 /*!
-Import Tailwind
-*/
-@import "tailwindcss/components.css";
-@import "tailwindcss/utilities.css";
-@import "tailwindcss/base.css";
-
-/*!
 Import Custom Styling
 */
 @import "./global.scss";
