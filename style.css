@@ -24466,6 +24466,21 @@ h6{
   font-family: var(--font-family-secondary), sans-serif;
 }
 
+h3 a:active,
+    h3 a:visited,
+    h3 a:hover,
+    h4 a:active,
+    h4 a:visited,
+    h4 a:hover,
+    h5 a:active,
+    h5 a:visited,
+    h5 a:hover,
+    h6 a:active,
+    h6 a:visited,
+    h6 a:hover {
+      font-family: var(--font-family-secondary), sans-serif;
+    }
+
 .top-navigation{
   font-family: var(--font-family-secondary), sans-serif;
 }
