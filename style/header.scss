@@ -1,3 +1,15 @@
 .top-navigation{
   font-family: var(--font-family-secondary), sans-serif;
+  @apply items-center;
+  .nav-menu>ul{
+    @apply gap-4;
+  }
+  @screen xl {
+    .nav-search-form{
+      min-width: 20%;
+    }
+  }
+  #nav-mobile{
+    @apply hidden;
+  }
 }

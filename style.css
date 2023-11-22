@@ -24483,7 +24483,15 @@ h3 a:active,
 
 .top-navigation{
   font-family: var(--font-family-secondary), sans-serif;
+  @include x-large-and-up {
+    .nav-search-form{
+    }
+  }
 }
+
+.top-navigation .nav-menu>ul{
+    gap: 1rem;
+  }
 
 @media (min-width: 640px){
   .sm\:container{
