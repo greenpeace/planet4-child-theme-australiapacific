@@ -24466,6 +24466,7 @@ h6{
   font-family: var(--font-family-secondary), sans-serif;
 }
 
+<<<<<<< HEAD
 h3 a:active,
     h3 a:visited,
     h3 a:hover,
@@ -24493,6 +24494,12 @@ h3 a:active,
     gap: 1rem;
   }
 
+=======
+.top-navigation{
+  font-family: var(--font-family-secondary), sans-serif;
+}
+
+>>>>>>> 9182a6d3c884fe1791b5fb556a0e1d6d240bf682
 @media (min-width: 640px){
   .sm\:container{
     width: 100%;
