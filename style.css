@@ -24466,6 +24466,10 @@ h6{
   font-family: var(--font-family-secondary), sans-serif;
 }
 
+.top-navigation{
+  font-family: var(--font-family-secondary), sans-serif;
+}
+
 @media (min-width: 640px){
   .sm\:container{
     width: 100%;
