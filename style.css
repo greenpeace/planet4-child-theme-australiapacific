@@ -67,3 +67,23 @@ h3 a:active,
 .top-navigation #nav-mobile{
     display: none;
   }
+
+@media (min-width: 768px) {
+
+.articles-block .article-list-section{
+      display: grid;
+
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+
+      gap: 1rem
+  }
+
+      .articles-block .article-list-section .article-list-item{
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -webkit-flex-direction: column;
+            -ms-flex-direction: column;
+                flex-direction: column;
+        margin-top: 0;
+      }
+    }
