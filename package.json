@@ -29,7 +29,7 @@
   "main": "style.scss",
   "scripts": {
     "build-theme-css": "postcss -o style.css style/style.scss",
-    "build": "concurrently -c \"cyan,blue\" --names \"theme, blocks, css\" \"npm run build-theme-css\" \"npm:build_css\"",
+    "build": "concurrently -c \"cyan,blue\" --names \"theme, blocks, css\" \"npm run build-theme-css\"",
     "start": "nodemon -d scss -e scss -x \"npm run build\"",
     "compile:css": "postcss style/style.scss -o style.css",
     "compile:rtl": "rtlcss style.css style-rtl.css",
