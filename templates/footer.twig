@@ -1,0 +1,63 @@
+<footer id="footer" class="site-footer marlin-footer site-footer--{{ nav_type }}">
+    {% if nav_type != 'minimal' %}
+    <div id="footer-logo" class="footer-logo">
+        {% include 'footer_logo.twig' %}
+    </div>
+    {% endif %}
+    <div class="container d-flex flex-column flex-lg-row-reverse">
+        {% include 'footer_info.twig' %}
+        {% if nav_type != 'minimal' %}
+            {% include 'footer_acknowledgement_of_country.twig' %}
+            {% include 'footer_commitment_to_diversity.twig' %}
+            <nav class="footer-menu">
+                <ul class="list-unstyled">
+                    {% for primary in footer_primary_menu %}
+                        <li>
+                            <a
+                                href="{{ primary.url }}"
+                                data-ga-category="Footer Navigation"
+                                data-ga-action="Footer Links"
+                                data-ga-label="{{ primary.title }}"
+                                {% if ( primary.target is same as '_blank' ) %}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                {% endif %}
+                            >
+                                {{ primary.title }}
+                            </a>
+                        </li>
+                    {% endfor %}
+
+                    {% for secondary in footer_secondary_menu %}
+                        <li>
+                            <a
+                                href="{{ secondary.url }}"
+                                data-ga-category="Footer Navigation"
+                                data-ga-action="Footer Links"
+                                data-ga-label="{{ secondary.title }}"
+                                {% if ( secondary.target is same as '_blank' ) %}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                {% endif %}
+                            >
+                                {{ secondary.title }}
+                            </a>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </nav>
+        {% endif %}
+    </div>
+
+    <div class="copyright">
+        <div class="container d-flex flex-column flex-xl-row">
+            <span role="text">
+                {{ 'creative-commons'|svgicon }}
+                {{ copyright_text_line2|e('wp_kses_post')|raw }} {{"now"|date('Y')}}
+            </span>
+            <span role="text">
+                {{ copyright_text_line1|e('wp_kses_post')|raw }}
+            </span>
+        </div>
+    </div>
+</footer>
