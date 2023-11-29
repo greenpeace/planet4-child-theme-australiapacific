@@ -1,0 +1,31 @@
+#footer {
+  background: url(img/footer-bg.png);
+  background-repeat-x: repeat;
+  background-repeat-y: no-repeat;
+  background-size: cover;
+  background-position: top center;
+  padding-top: 5rem;
+  h3{
+    font-size: 1rem;
+    text-align: left;
+    color: white;
+    font-weight: bold;
+  }
+  p {
+    font-size: 0.875rem;
+    line-height: 1.4;
+    text-align: left;
+    margin-bottom: 0;
+  }
+
+  #footer-logo{
+    text-align: left;
+    margin-bottom: 2.5rem;
+  }
+  .footer-info{
+    .address,
+    .info{
+      margin-bottom: 2rem;
+    }
+  }
+}

@@ -68,6 +68,39 @@ h3 a:active,
     display: none;
   }
 
+#footer {
+  background: url(img/footer-bg.png);
+  background-repeat-x: repeat;
+  background-repeat-y: no-repeat;
+  background-size: cover;
+  background-position: top center;
+  padding-top: 5rem;
+}
+
+#footer h3{
+    font-size: 1rem;
+    text-align: left;
+    color: white;
+    font-weight: bold;
+  }
+
+#footer p {
+    font-size: 0.875rem;
+    line-height: 1.4;
+    text-align: left;
+    margin-bottom: 0;
+  }
+
+#footer #footer-logo{
+    text-align: left;
+    margin-bottom: 2.5rem;
+  }
+
+#footer .footer-info .address,
+    #footer .footer-info .info{
+      margin-bottom: 2rem;
+    }
+
 @media (min-width: 768px) {
 
 .articles-block .article-list-section{
