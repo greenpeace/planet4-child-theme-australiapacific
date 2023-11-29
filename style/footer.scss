@@ -1,10 +1,11 @@
 #footer {
   @media (min-width: 768px) {
     background-image: url(img/footer-bg.png);
+    background-color: transparent;
     margin-top: -100px;
   }
-  background-repeat-x: repeat;
-  background-repeat-y: no-repeat;
+  background-repeat-x: no-repeat;
+  background-repeat-y: repeat;
   background-size: cover;
   background-position: top center;
   padding-top: 5rem;
