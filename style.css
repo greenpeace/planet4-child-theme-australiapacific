@@ -80,13 +80,21 @@ h3 a:active,
   }
 
 #footer {
-  background: url(img/footer-bg.png);
   background-repeat-x: repeat;
   background-repeat-y: no-repeat;
   background-size: cover;
   background-position: top center;
   padding-top: 5rem;
 }
+
+@media (min-width: 768px) {
+
+#footer {
+    background-image: url(img/footer-bg.png);
+
+    margin-top: -100px
+}
+  }
 
 @media (min-width: 1200px) {
 
@@ -113,7 +121,7 @@ h3 a:active,
 
 @media (min-width: 1200px) {
 
-#footer #footer-menu{
+#footer .footer-menu{
       min-width: 400px
   }
     }
