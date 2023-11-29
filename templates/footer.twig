@@ -4,7 +4,7 @@
         {% include 'footer_logo.twig' %}
     </div>
     {% endif %}
-    <div class="container d-flex flex-column flex-lg-row-reverse">
+    <div class="content-row container d-flex flex-column flex-lg-row-reverse">
         {% if nav_type != 'minimal' %}
             <nav class="footer-menu">
                 <ul class="list-unstyled">
@@ -43,8 +43,8 @@
                     {% endfor %}
                 </ul>
             </nav>
-            {% include 'footer_acknowledgement_of_country.twig' %}
             {% include 'footer_commitment_to_diversity.twig' %}
+            {% include 'footer_acknowledgement_of_country.twig' %}
         {% endif %}
         {% include 'footer_info.twig' %}
     </div>

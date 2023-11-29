@@ -5,6 +5,9 @@
   background-size: cover;
   background-position: top center;
   padding-top: 5rem;
+  @media (min-width: 1200px) {
+    flex-wrap: wrap;
+  }
   h3{
     font-size: 1rem;
     text-align: left;
@@ -17,7 +20,14 @@
     text-align: left;
     margin-bottom: 0;
   }
-
+  #footer-menu{
+    @media (min-width: 1200px) {
+      min-width: 400px;
+    }
+  }
+  .content-row{
+    gap: 2rem;
+  }
   #footer-logo{
     text-align: left;
     margin-bottom: 2.5rem;
