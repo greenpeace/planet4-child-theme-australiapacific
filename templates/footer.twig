@@ -4,8 +4,16 @@
         {% include 'footer_logo.twig' %}
     </div>
     {% endif %}
+<<<<<<< HEAD
     <div class="content-row container d-flex flex-column flex-xl-row-reverse">
         {% if nav_type != 'minimal' %}
+=======
+    <div class="container d-flex flex-column flex-lg-row-reverse">
+        {% include 'footer_info.twig' %}
+        {% if nav_type != 'minimal' %}
+            {% include 'footer_acknowledgement_of_country.twig' %}
+            {% include 'footer_commitment_to_diversity.twig' %}
+>>>>>>> 4a15064 (creating custom footer and adding ACF options page)
             <nav class="footer-menu">
                 <ul class="list-unstyled">
                     {% for primary in footer_primary_menu %}
@@ -43,12 +51,16 @@
                     {% endfor %}
                 </ul>
             </nav>
+<<<<<<< HEAD
             <div class="company-message">
             {% include 'footer_acknowledgement_of_country.twig' %}
             {% include 'footer_commitment_to_diversity.twig' %}
             </div>
         {% endif %}
         {% include 'footer_info.twig' %}
+=======
+        {% endif %}
+>>>>>>> 4a15064 (creating custom footer and adding ACF options page)
     </div>
 
     <div class="copyright">
