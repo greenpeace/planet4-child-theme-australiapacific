@@ -9,8 +9,9 @@
   background-size: cover;
   background-position: top center;
   padding-top: 5rem;
+  flex-wrap: wrap;
   @media (min-width: 1200px) {
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
   }
   h3{
     font-size: 1rem;
@@ -24,7 +25,20 @@
     text-align: left;
     margin-bottom: 0;
   }
-  .footer-menu{
+  .company-message{
+    display: flex;
+    gap: 1rem;
+    flex-direction: column;
+    @media (min-width: 640px) {
+      flex-direction: row;
+    }
+    .primary-message,
+    .secondary-message{
+      flex-basis: 50%;
+    }
+  }
+  .footer-menu,
+  .primary-message{
     @media (min-width: 1200px) {
       min-width: 400px;
     }
