@@ -29,9 +29,6 @@
     display: flex;
     gap: 1rem;
     flex-direction: column;
-    @media (min-width: 640px) {
-      //flex-direction: row;
-    }
     .primary-message,
     .secondary-message{
       flex-basis: 50%;
