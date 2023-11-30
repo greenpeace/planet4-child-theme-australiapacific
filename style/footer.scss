@@ -30,11 +30,12 @@
     gap: 1rem;
     flex-direction: column;
     @media (min-width: 640px) {
-      flex-direction: row;
+      //flex-direction: row;
     }
     .primary-message,
     .secondary-message{
       flex-basis: 50%;
+      margin-bottom: 1rem;
     }
   }
   .footer-menu,
@@ -49,6 +50,9 @@
   #footer-logo{
     text-align: left;
     margin-bottom: 2.5rem;
+    img{
+      max-width: 160px;
+    }
   }
   .footer-info{
     .address,
