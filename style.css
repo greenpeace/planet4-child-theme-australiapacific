@@ -93,7 +93,7 @@ h3 a:active,
 @media (min-width: 768px) {
 
 #footer {
-    background-image: url(img/footer-bg.png);
+    background-image: url(img/footer-bg.svg);
 
     background-color: transparent;
 
