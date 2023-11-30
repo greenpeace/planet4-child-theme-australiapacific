@@ -85,6 +85,9 @@ h3 a:active,
   background-size: cover;
   background-position: top center;
   padding-top: 5rem;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
 }
 
 @media (min-width: 768px) {
@@ -101,9 +104,9 @@ h3 a:active,
 @media (min-width: 1200px) {
 
 #footer {
-    -webkit-flex-wrap: wrap;
-        -ms-flex-wrap: wrap;
-            flex-wrap: wrap
+    -webkit-flex-wrap: nowrap;
+        -ms-flex-wrap: nowrap;
+            flex-wrap: nowrap
 }
   }
 
@@ -121,9 +124,41 @@ h3 a:active,
     margin-bottom: 0;
   }
 
+#footer .company-message{
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    gap: 1rem;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+
+@media (min-width: 640px) {
+
+#footer .company-message{
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+      -webkit-flex-direction: row;
+          -ms-flex-direction: row;
+              flex-direction: row
+  }
+    }
+
+#footer .company-message .primary-message,
+    #footer .company-message .secondary-message{
+      -webkit-flex-basis: 50%;
+          -ms-flex-preferred-size: 50%;
+              flex-basis: 50%;
+    }
+
 @media (min-width: 1200px) {
 
-#footer .footer-menu{
+#footer .footer-menu,
+  #footer .primary-message{
       min-width: 400px
   }
     }
