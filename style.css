@@ -238,9 +238,13 @@ h3 a:active,
 
 #footer .footer-menu,
   #footer .primary-message{
+<<<<<<< HEAD
       min-width: 350px;
 
       max-width: 500px
+=======
+      min-width: 350px
+>>>>>>> 5baa9ed (Updating the footer menu min width for 1200px screens and above)
   }
     }
 
