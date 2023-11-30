@@ -266,12 +266,21 @@ h3 a:active,
       margin-bottom: 2rem;
     }
 
+<<<<<<< HEAD
 #footer .copyright .container{
       -webkit-box-pack: center;
       -webkit-justify-content: center;
           -ms-flex-pack: center;
               justify-content: center;
     }
+=======
+#footer .copyright {
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+>>>>>>> d8d5d54 (updating the footer copyright styles)
 
 #footer .copyright span:not(:last-of-type):after{
       display: none !important;
