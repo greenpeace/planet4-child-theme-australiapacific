@@ -58,7 +58,9 @@
     }
   }
   .copyright {
-    justify-content: center;
+    .container{
+      justify-content: center;
+    }
     span:not(:last-of-type):after{
       display: none !important;
     }
