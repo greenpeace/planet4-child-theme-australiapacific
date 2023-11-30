@@ -43,4 +43,8 @@ function fix_svg() {
         }
         </style>';
 }
+<<<<<<< HEAD
 add_action( 'admin_head', 'fix_svg' );
+=======
+add_action( 'admin_head', 'fix_svg' );
+>>>>>>> 5664b2f (adding SVG support and updating footer styles and bg)
