@@ -22,6 +22,7 @@ Import Custom Styling
   --font-family-secondary: 'Work Sans';
   --font-family-tertiary: 'Work Sans';
   --font-family-button: 'Work Sans';
+  --footer-menu--li--font-size: 15px;
 }
 
 h3,
@@ -136,13 +137,6 @@ h3 a:active,
         -ms-flex-direction: column;
             flex-direction: column;
   }
-
-@media (min-width: 640px) {
-
-#footer .company-message{
-      //flex-direction: row
-  }
-    }
 
 #footer .company-message .primary-message,
     #footer .company-message .secondary-message{
