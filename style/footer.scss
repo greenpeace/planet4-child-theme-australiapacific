@@ -60,4 +60,10 @@
       margin-bottom: 2rem;
     }
   }
+  .copyright {
+    justify-content: center;
+    span:not(:last-of-type):after{
+      display: none !important;
+    }
+  }
 }

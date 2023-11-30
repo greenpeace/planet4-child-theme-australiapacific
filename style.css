@@ -178,6 +178,17 @@ h3 a:active,
       margin-bottom: 2rem;
     }
 
+#footer .copyright {
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+
+#footer .copyright span:not(:last-of-type):after{
+      display: none !important;
+    }
+
 @media (min-width: 768px) {
 
 .articles-block .article-list-section{
