@@ -206,3 +206,7 @@ h3 a:active,
 .wp-block-media-text .wp-block-media-text__content{
     padding: 0;
   }
+
+#comments{
+  margin-top: 50px;
+}
