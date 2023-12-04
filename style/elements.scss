@@ -1,16 +1,18 @@
-.articles-block{
-  .article-list-section{
-    @media (min-width: 768px) {
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr 1fr;
-      gap: 1rem;
-      
-      .article-list-item{
-        flex-direction: column;
-        margin-top: 0;
+.home{
+  .articles-block {
+      .article-list-section {
+        @media (min-width: 768px) {
+          display: grid;
+          grid-template-columns: 1fr 1fr 1fr 1fr;
+          gap: 1rem;
+
+          .article-list-item {
+            flex-direction: column;
+            margin-top: 0;
+          }
+        }
       }
     }
-  }
 }
 
 .wp-block-media-text {

@@ -27,6 +27,8 @@ h6{
   .container-sm,
   .container-xl,
   .container-xxl {
-    max-width: 1600px;
+    &:not(.narrow-container){
+      max-width: 1600px;
+    }
   }
 }
