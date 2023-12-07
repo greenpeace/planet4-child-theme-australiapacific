@@ -15,6 +15,11 @@ if( function_exists('acf_add_options_page') ) {
     acf_add_options_page();
 }
 
+function register_custom_script() {
+  wp_enqueue_script( 'marlin-script', get_stylesheet_directory_uri() .  '/js/scripts.js' );
+}
+add_action( 'wp_enqueue_scripts', 'register_custom_script' );
+
 // SVG Support
 add_filter( 'wp_check_filetype_and_ext', function($data, $file, $filename, $mimes) {
   global $wp_version;
