@@ -8,10 +8,11 @@
 h3,
 h4,
 h5,
-h6{
+h6 {
   font-family: var(--font-family-secondary), sans-serif;
 
-  a{
+  a {
+
     &:active,
     &:visited,
     &:hover {
@@ -21,14 +22,30 @@ h6{
 }
 
 @media (min-width: 1600px) {
+
   .container,
   .container-lg,
   .container-md,
   .container-sm,
   .container-xl,
   .container-xxl {
-    &:not(.narrow-container){
+    &:not(.narrow-container) {
       max-width: 1600px;
     }
   }
+}
+
+.page-content {
+  padding-top: 0 !important;
+}
+
+/* Helper Classes */
+.white-background {
+  background-color: rgba(255, 255, 255, 1);
+  transition: background-color 0.5s ease;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 1), rgba(255, 255, 255, 1));
+}
+
+.text-black {
+  color: var(--wp--preset--color--black);
 }
