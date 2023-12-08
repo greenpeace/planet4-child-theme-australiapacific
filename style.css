@@ -53,6 +53,10 @@ h3 a:active,
     }
 }
 
+.block {
+  display: block;
+}
+
 .top-navigation{
   font-family: var(--font-family-secondary), sans-serif;
   -webkit-box-align: center;
