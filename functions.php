@@ -44,3 +44,53 @@ function fix_svg() {
         </style>';
 }
 add_action( 'admin_head', 'fix_svg' );
+
+// Register ACF Long Bio Fields
+if (function_exists('acf_add_local_field_group')) {
+
+  acf_add_local_field_group(array(
+      'key' => 'group_6579185b4dab2',
+      'title' => 'Author Profile',
+      'fields' => array(
+	        // Add Long Bio Field
+          array(
+              'key' => 'field_6579501f61353',
+              'label' => 'Long Bio',
+              'name' => 'long_bio',
+              'type' => 'wysiwyg',
+          ),
+          // Add a Role field
+          array(
+              'key' => 'field_657957dc3cd62',
+              'label' => 'Role',
+              'name' => 'role',
+              'type' => 'text',
+          ),
+          // Add a Bio Image field
+          array(
+              'key' => 'field_657957c03cd61',
+              'label' => 'Bio Image',
+              'name' => 'bio_image',
+              'type' => 'image',
+          ),
+          // Add a LinkedIn Profile field
+          array(
+             'key' => 'field_657958313cd63',
+              'label' => 'Linkedin Profile',
+              'name' => 'linkedin_profile',
+              'type' => 'url',
+           ),
+          // You can add as many fields as needed
+      ),
+      'location' => array(
+          array(
+              array(
+                  'param' => 'user_form',
+                  'operator' => '==',
+                  'value' => 'edit',
+              ),
+          ),
+      ),
+  ));
+}
+
