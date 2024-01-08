@@ -14,15 +14,17 @@ function growShrinkLogo() {
 		document.body.scrollTop ||
 		0;
 
-  if (size == 0 && scroll > endOfDocumentTop) {
-		logo.classList.remove( 'largelogo' );
-    logo.classList.add('smalllogo');
-		header.classList.add( 'white-background' ); // Apply white background and shadow
-		size = 1;
-	} else if ( size == 1 && scroll <= endOfDocumentTop ) {
-		logo.classList.remove( 'smalllogo' );
-		logo.classList.add( 'largelogo' );
-		header.classList.remove( 'white-background' ); // Remove white background and shadow
-		size = 0;
+	if (document.body.classList.contains('home')) {
+		if (size == 0 && scroll > endOfDocumentTop) {
+			logo.classList.remove( 'largelogo' );
+			logo.classList.add('smalllogo');
+			header.classList.add( 'white-background' ); // Apply white background and shadow
+			size = 1;
+		} else if ( size == 1 && scroll <= endOfDocumentTop ) {
+			logo.classList.remove( 'smalllogo' );
+			logo.classList.add( 'largelogo' );
+			header.classList.remove( 'white-background' ); // Remove white background and shadow
+			size = 0;
+		}
 	}
 }

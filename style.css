@@ -71,10 +71,41 @@ h3 a:active,
   color: var(--wp--preset--color--black);
 }
 
+.home #header {
+    background-color: transparent;
+    -webkit-box-shadow: none;
+            box-shadow: none;
+  }
+
+.home #header .nav-menu>ul .nav-link {
+        --color-text-nav_link: var(--wp--preset--color--white);
+      }
+
+.home #header #search_form #search_input::-webkit-input-placeholder {
+          color: var(--wp--preset--color--white);
+        }
+
+.home #header #search_form #search_input::-moz-placeholder {
+          color: var(--wp--preset--color--white);
+        }
+
+.home #header #search_form #search_input:-ms-input-placeholder {
+          color: var(--wp--preset--color--white);
+        }
+
+.home #header #search_form #search_input::-ms-input-placeholder {
+          color: var(--wp--preset--color--white);
+        }
+
+.home #header #search_form #search_input::placeholder {
+          color: var(--wp--preset--color--white);
+        }
+
+.home #header #search_form button .icon {
+          fill: var(--wp--preset--color--white);
+        }
+
 #header {
-  background-color: transparent;
-  -webkit-box-shadow: none;
-          box-shadow: none;
   font-family: var(--font-family-secondary), sans-serif;
   -webkit-box-align: center;
   -webkit-align-items: center;
@@ -85,10 +116,6 @@ h3 a:active,
 #header .nav-menu>ul {
     gap: 1rem;
   }
-
-#header .nav-menu>ul .nav-link {
-      --color-text-nav_link: var(--wp--preset--color--white);
-    }
 
 @media (min-width: 1200px) {
     #header .nav-search-form {
@@ -116,30 +143,6 @@ h3 a:active,
 #header .site-logo img {
       width: 100%;
     }
-
-#header #search_form #search_input::-webkit-input-placeholder {
-        color: var(--wp--preset--color--white);
-      }
-
-#header #search_form #search_input::-moz-placeholder {
-        color: var(--wp--preset--color--white);
-      }
-
-#header #search_form #search_input:-ms-input-placeholder {
-        color: var(--wp--preset--color--white);
-      }
-
-#header #search_form #search_input::-ms-input-placeholder {
-        color: var(--wp--preset--color--white);
-      }
-
-#header #search_form #search_input::placeholder {
-        color: var(--wp--preset--color--white);
-      }
-
-#header #search_form button .icon {
-        fill: var(--wp--preset--color--white);
-      }
 
 #header.white-background .nav-menu>ul .nav-link {
         --color-text-nav_link: var(--wp--preset--color--black);
