@@ -16,6 +16,8 @@ if( function_exists('acf_add_options_page') ) {
 }
 
 function register_custom_script() {
-  wp_enqueue_script( 'marlin-script', get_stylesheet_directory_uri() .  '/js/scripts.js' );
+  wp_enqueue_script( 'logo-resize-script', get_stylesheet_directory_uri() .  '/js/logo-resize-script.js' );
 }
-add_action( 'wp_enqueue_scripts', 'register_custom_script' );
+if(is_front_page()){
+  add_action( 'wp_enqueue_scripts', 'register_custom_script' );
+}

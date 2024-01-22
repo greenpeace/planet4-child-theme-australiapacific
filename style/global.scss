@@ -29,21 +29,20 @@ h6 {
   .container-sm,
   .container-xl,
   .container-xxl {
-    &:not(.narrow-container) {
+    &:not(.narrow-container){
       max-width: 1600px;
     }
   }
 }
 
-.page-content {
-  padding-top: 0 !important;
+.home .page-content {
+  padding-top: 0;
 }
 
 /* Helper Classes */
 .white-background {
   background-color: rgba(255, 255, 255, 1);
   transition: background-color 0.5s ease;
-  background: linear-gradient(to bottom, rgba(255, 255, 255, 1), rgba(255, 255, 255, 1));
 }
 
 .text-black {
