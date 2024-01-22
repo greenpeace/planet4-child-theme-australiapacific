@@ -29,7 +29,7 @@ h6 {
   .container-sm,
   .container-xl,
   .container-xxl {
-    &:not(.narrow-container){
+    &:not(.narrow-container) {
       max-width: 1600px;
     }
   }
