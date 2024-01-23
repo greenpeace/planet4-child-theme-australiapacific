@@ -37,6 +37,9 @@ if (isset($wp_query->query_vars['author'])) {
     $linkedinProfile = get_field('linkedin_profile', 'user_' . get_queried_object_id()); 
     $context['linkedinProfile'] = $linkedinProfile;
 
+    $twitterProfile = get_field('twitter_profile', 'user_' . get_queried_object_id()); 
+    $context['twitterProfile'] = $twitterProfile;
+
     $bioImage = get_field('bio_image', 'user_' . get_queried_object_id()); 
     $context['bioImage'] = $bioImage;
 
