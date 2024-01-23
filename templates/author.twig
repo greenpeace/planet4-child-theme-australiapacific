@@ -11,9 +11,25 @@
         {% endif %}
         <div class="author-details">
             <h1 class="page-header-title">{{ author.name }}</h1>
+
+            {% if role %}
+                <h2>{{ role|raw }}</h2>
+            {% endif %}
+
+            {% if role %}
+                <p class="bio-linkedin"><a href="{{ linkedinProfile|raw }}" target="_blank">Find me on LinkedIn</a></p>
+            {% endif %}
+
             {% if ( author.description ) %}
                 <p class="d-md-block author-bio" aria-label="{{ __( 'Author bio', 'planet4-master-theme' ) }}">{{ fn('wpautop', fn('the_author_meta', 'description', author.id))|e('wp_kses_post')|raw }}</p>
             {% endif %}
+
+            {% if longBio %}
+                <div class="author-long-bio">
+                    {{ longBio|raw }}
+                </div>
+            {% endif %}
+
         </div>
     </header>
 

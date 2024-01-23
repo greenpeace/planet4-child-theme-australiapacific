@@ -28,6 +28,21 @@ $post_args = [
 ];
 
 if (isset($wp_query->query_vars['author'])) {
+    
+    // Fetch the ACF Bio Fields and store in context
+
+    $role = get_field('role', 'user_' . get_queried_object_id()); 
+    $context['role'] = $role;
+
+    $linkedinProfile = get_field('linkedin_profile', 'user_' . get_queried_object_id()); 
+    $context['linkedinProfile'] = $linkedinProfile;
+
+    $bioImage = get_field('bio_image', 'user_' . get_queried_object_id()); 
+    $context['bioImage'] = $bioImage;
+
+    $longBio = get_field('long_bio', 'user_' . get_queried_object_id()); 
+    $context['longBio'] = $longBio;
+
     $author = new User($wp_query->query_vars['author']);
     $context['author'] = $author;
     $context['title'] = 'Author Archives: ' . $author->name();
