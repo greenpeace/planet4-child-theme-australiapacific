@@ -15,6 +15,13 @@ if( function_exists('acf_add_options_page') ) {
     acf_add_options_page();
 }
 
+function register_custom_script() {
+  if(is_front_page()){
+    wp_enqueue_script( 'logo-resize-script', get_stylesheet_directory_uri() .  '/js/logo-resize-script.js' );
+  }
+}
+add_action( 'wp_enqueue_scripts', 'register_custom_script' );
+
 // SVG Support
 add_filter( 'wp_check_filetype_and_ext', function($data, $file, $filename, $mimes) {
   global $wp_version;
