@@ -13,11 +13,15 @@
             <h1 class="page-header-title">{{ author.name }}</h1>
 
             {% if role %}
-                <h2>{{ role|raw }}</h2>
+                <h2>{{ role|e('wp_kses_post')|raw }}</h2>
             {% endif %}
 
-            {% if role %}
-                <p class="bio-linkedin"><a href="{{ linkedinProfile|raw }}" target="_blank">Find me on LinkedIn</a></p>
+            {% if linkedinProfile %}
+                <p class="bio-linkedin"><a href="{{ linkedinProfile|e('wp_kses_post')|raw }}" target="_blank">Find me on LinkedIn</a></p>
+            {% endif %}
+
+            {% if twitterProfile %}
+                <p class="bio-twitter"><a href="{{ twitterProfile|e('wp_kses_post')|raw }}" target="_blank">Find me on Twitter</a></p>
             {% endif %}
 
             {% if ( author.description ) %}
@@ -26,7 +30,7 @@
 
             {% if longBio %}
                 <div class="author-long-bio">
-                    {{ longBio|raw }}
+                    {{ longBio|e('wp_kses_post')|raw }}
                 </div>
             {% endif %}
 
