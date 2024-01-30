@@ -44,3 +44,17 @@ function fix_svg() {
         </style>';
 }
 add_action( 'admin_head', 'fix_svg' );
+
+// Template parts theme support
+function add_block_template_part_support() {
+  add_theme_support( 'block-template-parts' );
+  }
+  add_action( 'after_setup_theme', 'add_block_template_part_support' );
+
+  function get_template_content($name = null){
+    ob_start();
+    block_template_part($name);
+    return ob_get_clean();
+}
+
+
