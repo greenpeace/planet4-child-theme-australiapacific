@@ -78,10 +78,10 @@
                 {% include "blocks/share_buttons.twig" with {social:post.share_meta, utm_medium: 'share'} %}
 
                 <!-- Include banner block-->
-                {{ function('get_template_content', 'banner-news')|raw }}
+                {{ function('get_template_content', 'banner-news')|e('wp_kses_post')|raw  }}
 
                 {% if 'archive' in post.tags|map(attribute => attribute.slug) %}
-                {{ function('get_template_content', 'archive')|raw }}
+                {{ function('get_template_content', 'archive')|e('wp_kses_post')|raw  }}
                 {% endif %}
 
 
@@ -114,7 +114,7 @@
             </div>
 
             <!-- Include footer block-->
-            {{ function('get_template_content', 'footer-news')|raw }}
+            {{ function('get_template_content', 'footer-news')|e('wp_kses_post')|raw  }}
 
         </div>
         <!-- Post Page Block End -->
