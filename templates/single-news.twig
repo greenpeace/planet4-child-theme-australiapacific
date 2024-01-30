@@ -1,13 +1,4 @@
-{% extends "base.twig" %}
-
 {% block content %}
-
-    <!-- Custom Post Types -->
-    {% if ( post.page_types.0.slug == 'news' )%}
-        {% include 'single-news.twig' %}
-    {% else %}
-    <!-- End Custom Post Types -->
-
     <div class="clearfix"></div>
 
     <article id="post-{{ post.ID }}">
@@ -85,12 +76,14 @@
                     </div>
                 </div>
                 {% include "blocks/share_buttons.twig" with {social:post.share_meta, utm_medium: 'share'} %}
-                
-                <!-- Include archive block-->
+
+                <!-- Include banner block-->
+                {{ function('get_template_content', 'banner-news')|raw }}
+
                 {% if 'archive' in post.tags|map(attribute => attribute.slug) %}
-                    {{ function('get_template_content', 'archive')|e('wp_kses_post')|raw }}
+                {{ function('get_template_content', 'archive')|raw }}
                 {% endif %}
-                <!-- End Include archive block-->
+
 
             </header>
         </div>
@@ -119,6 +112,10 @@
                     {% endfor %}
                 {% endif %}
             </div>
+
+            <!-- Include footer block-->
+            {{ function('get_template_content', 'footer-news')|raw }}
+
         </div>
         <!-- Post Page Block End -->
 
@@ -132,6 +129,6 @@
         {% if ( show_comments ) %}
             {% include "comments_section.twig" with {comments:post.get_comments()} %}
         {% endif %}
-    </article>
-    {% endif %} 
+    </article>    
 {% endblock %}
+
