@@ -12,7 +12,7 @@
   @media (min-width: 1200px) {
     flex-wrap: nowrap;
   }
-  h3{
+  h3 {
     font-size: 1rem;
     text-align: left;
     color: var(--wp--preset--color--white);
@@ -24,46 +24,46 @@
     text-align: left;
     margin-bottom: 0;
   }
-  .company-message{
+  .company-message {
     display: flex;
     gap: 1rem;
     flex-direction: column;
     .primary-message,
-    .secondary-message{
+    .secondary-message {
       flex-basis: 50%;
       margin-bottom: 1rem;
       max-width: 600px;
     }
   }
   .footer-menu,
-  .primary-message{
+  .primary-message {
     @media (min-width: 1200px) {
       min-width: 350px;
       max-width: 500px;
     }
   }
-  .content-row{
+  .content-row {
     gap: 2rem;
     justify-content: space-between;
   }
-  #footer-logo{
+  #footer-logo {
     text-align: left;
     margin-bottom: 2.5rem;
-    img{
+    img {
       max-width: 160px;
     }
   }
-  .footer-info{
+  .footer-info {
     .address,
-    .info{
+    .info {
       margin-bottom: 2rem;
     }
   }
   .copyright {
-    .container{
+    .container {
       justify-content: center;
     }
-    span:not(:last-of-type):after{
+    span:not(:last-of-type):after {
       display: none !important;
     }
   }
