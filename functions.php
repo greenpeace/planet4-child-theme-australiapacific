@@ -4,7 +4,7 @@
  * Additional code for the child theme goes in here.
  */
 
-add_action( 'wp_enqueue_scripts', 'enqueue_child_styles', 99);
+add_action('wp_enqueue_scripts', 'enqueue_child_styles', 99);
 
 function enqueue_child_styles() {
     $css_creation = filectime(get_stylesheet_directory() . '/style.css');
