@@ -11,3 +11,11 @@ function enqueue_child_styles() {
 
     wp_enqueue_style( 'child-style', get_stylesheet_directory_uri() . '/style.css', [], $css_creation );
 }
+
+function register_custom_script() {
+    if(is_front_page()){
+      wp_enqueue_script( 'logo-resize-script', get_stylesheet_directory_uri() .  '/js/logo-resize-script.js' );
+    }
+  }
+
+add_action( 'wp_enqueue_scripts', 'register_custom_script' );
