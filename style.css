@@ -53,57 +53,7 @@ h3 a:active,
     }
 }
 
-/* Helper Classes */
-
-.white-background {
-  background-color: rgba(255, 255, 255, 1) !important;
-  -webkit-transition: background-color 0.5s ease;
-  transition: background-color 0.5s ease;
-}
-
-.text-black {
-  color: var(--wp--preset--color--black);
-}
-
-.home .page-content {
-    padding-top: 0;
-  }
-
-.home #header {
-    background-color: transparent;
-    -webkit-box-shadow: none;
-            box-shadow: none;
-  }
-
-.home #header .nav-menu>ul .nav-link {
-        --color-text-nav_link: var(--wp--preset--color--white);
-      }
-
-.home #header #search_form #search_input::-webkit-input-placeholder {
-          color: var(--wp--preset--color--white);
-        }
-
-.home #header #search_form #search_input::-moz-placeholder {
-          color: var(--wp--preset--color--white);
-        }
-
-.home #header #search_form #search_input:-ms-input-placeholder {
-          color: var(--wp--preset--color--white);
-        }
-
-.home #header #search_form #search_input::-ms-input-placeholder {
-          color: var(--wp--preset--color--white);
-        }
-
-.home #header #search_form #search_input::placeholder {
-          color: var(--wp--preset--color--white);
-        }
-
-.home #header #search_form button .icon {
-          fill: var(--wp--preset--color--white);
-        }
-
-#header {
+.top-navigation{
   font-family: var(--font-family-secondary), sans-serif;
   -webkit-box-align: center;
   -webkit-align-items: center;
@@ -111,65 +61,87 @@ h3 a:active,
           align-items: center;
 }
 
-#header .nav-menu>ul {
+.top-navigation .nav-menu>ul {
     gap: 1rem;
   }
 
 @media (min-width: 1200px) {
-    #header .nav-search-form {
+    .top-navigation .nav-search-form {
       min-width: 20%;
     }
   }
 
-#header #nav-mobile {
+.top-navigation #nav-mobile {
     display: none;
   }
 
-#header .site-logo {
-    -webkit-transition: all 0.3s;
-    transition: all 0.3s;
+/* ## Header customisations:
+   1. The white top navbar is transparent to start,
+      and transitions to white background only on-scroll.
+   2. The logo is slightly bigger to start, then goes small on scroll.
+*/
+
+.home .page-content {
+    padding-top: 0; /* scoot the hero image up under the now-transparent menu */
   }
 
-#header .site-logo.largelogo {
-      width: 260px;
+.home .top-navigation {
+    -webkit-transition: background-color 0.5s ease;
+    transition: background-color 0.5s ease;
+  }
+
+.home:not(.scrolled) .top-navigation {
+    -webkit-box-shadow: none;
+            box-shadow: none; /* drop default shadow because it'll look odd with transparent nav menu bar */
+    --color-background-navigation_bar: transparent;
+  }
+
+/* override P4 default: var(--white); */
+
+.home:not(.scrolled) .top-navigation .nav-menu {
+      --color-text-nav_link: var(--wp--preset--color--white); /* override P4 default: var(--grey-900); */
     }
 
-#header .site-logo.smalllogo {
-      width: 130px;
+.home:not(.scrolled) .top-navigation .nav-submenu {
+      --submenu-nav-link--color: var(--grey-900);
+      --submenu-nav-link--hover--color: var(--submenu-nav-link--color);
     }
 
-#header .site-logo img {
-      width: 100%;
-      height: auto;
-    }
-
-#header.white-background .nav-menu>ul .nav-link {
-        --color-text-nav_link: var(--wp--preset--color--black);
+.home:not(.scrolled) .top-navigation #search_form #search_input::-webkit-input-placeholder {
+        color: var(--wp--preset--color--white);
       }
 
-#header.white-background #search_form #search_input::-webkit-input-placeholder {
-          color: var(--wp--preset--color--grey-900);
+.home:not(.scrolled) .top-navigation #search_form #search_input::-moz-placeholder {
+        color: var(--wp--preset--color--white);
+      }
+
+.home:not(.scrolled) .top-navigation #search_form #search_input:-ms-input-placeholder {
+        color: var(--wp--preset--color--white);
+      }
+
+.home:not(.scrolled) .top-navigation #search_form #search_input::-ms-input-placeholder {
+        color: var(--wp--preset--color--white);
+      }
+
+.home:not(.scrolled) .top-navigation #search_form #search_input, .home:not(.scrolled) .top-navigation #search_form #search_input::placeholder {
+        color: var(--wp--preset--color--white);
+      }
+
+.home:not(.scrolled) .top-navigation #search_form button .icon {
+          fill: var(--wp--preset--color--white);
         }
 
-#header.white-background #search_form #search_input::-moz-placeholder {
-          color: var(--wp--preset--color--grey-900);
-        }
+.home .site-logo img {
+      -webkit-transition: height 0.4s;
+      transition: height 0.4s;
+      /* bump height to get big logo (bumped up by fraction of golden ratio) */
+      height: -webkit-calc(26px + 1/2 * -webkit-calc(1.61803 * 26px - 26px));
+      height: calc(26px + 1/2 * calc(1.61803 * 26px - 26px));
+    }
 
-#header.white-background #search_form #search_input:-ms-input-placeholder {
-          color: var(--wp--preset--color--grey-900);
-        }
-
-#header.white-background #search_form #search_input::-ms-input-placeholder {
-          color: var(--wp--preset--color--grey-900);
-        }
-
-#header.white-background #search_form #search_input::placeholder {
-          color: var(--wp--preset--color--grey-900);
-        }
-
-#header.white-background #search_form button .icon {
-          fill: var(--wp--preset--color--black);
-        }
+body.scrolled.home .site-logo img {
+        height: 26px; /* default P4 value */
+      }
 
 #footer {
   background-repeat-x: no-repeat;
