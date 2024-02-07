@@ -13,3 +13,53 @@
     display: none;
   }
 }
+
+/* ## Header customisations:
+   1. The white top navbar is transparent to start,
+      and transitions to white background only on-scroll.
+   2. The logo is slightly bigger to start, then goes small on scroll.
+*/
+
+.home {
+  .page-content {
+    padding-top: 0; /* scoot the hero image up under the now-transparent menu */
+  }
+  .top-navigation {
+    transition: background-color 0.5s ease;
+  }
+  &:not(.scrolled) .top-navigation {
+    box-shadow: none; /* drop default shadow because it'll look odd with transparent nav menu bar */
+
+    --color-background-navigation_bar: transparent; /* override P4 default: var(--white); */
+    .nav-menu {
+      --color-text-nav_link: var(--wp--preset--color--white); /* override P4 default: var(--grey-900); */
+    }
+
+    .nav-submenu {
+      --submenu-nav-link--color: var(--grey-900);
+      --submenu-nav-link--hover--color: var(--submenu-nav-link--color);
+    }
+
+    #search_form {
+      #search_input, #search_input::placeholder {
+          color: var(--wp--preset--color--white);
+      }
+      button {
+        .icon {
+          fill: var(--wp--preset--color--white);
+        }
+      }
+    }
+  }
+
+  .site-logo {
+    img {
+      transition: height 0.4s;
+      /* bump height to get big logo (bumped up by fraction of golden ratio) */
+      height: calc(26px + 1/2 * calc(1.61803 * 26px - 26px));
+      body.scrolled& {
+        height: 26px; /* default P4 value */
+      }
+    }
+  }
+}
