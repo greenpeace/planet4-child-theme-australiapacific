@@ -49,40 +49,40 @@ add_action( 'admin_head', 'fix_svg' );
 if (function_exists('acf_add_local_field_group')) {
 
   acf_add_local_field_group(array(
-      'key' => 'group_6579185b4dab2',
+      'key' => 'group_65af4ec31be1a',
       'title' => 'Author Profile',
       'fields' => array(
         // Add a Bio Image field
         array(
-            'key' => 'field_657957c03cd61',
+            'key' => 'field_65af4ecfd296a',
             'label' => 'Bio Image',
             'name' => 'bio_image',
             'type' => 'image',
         ),
         // Add a Role field
         array(
-          'key' => 'field_657957dc3cd62',
+          'key' => 'field_65af4f6dd296b',
           'label' => 'Role',
           'name' => 'role',
           'type' => 'text',
         ),
         // Add a LinkedIn Profile field
         array(
-          'key' => 'field_657958313cd63',
+          'key' => 'field_65af4f81d296c',
           'label' => 'Linkedin Profile',
           'name' => 'linkedin_profile',
           'type' => 'url',
         ),
         // Add a Twitter Profile field
         array(
-          'key' => 'field_657958313cd64',
+          'key' => 'field_65af4f8ed296d',
           'label' => 'Twitter Profile',
           'name' => 'twitter_profile',
           'type' => 'url',
         ),
         // Add Long Bio Field
         array(
-            'key' => 'field_6579501f61353',
+            'key' => 'field_65af4f96d296e',
             'label' => 'Long Bio',
             'name' => 'long_bio',
             'type' => 'wysiwyg',
