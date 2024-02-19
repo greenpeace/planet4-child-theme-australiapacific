@@ -61,19 +61,87 @@ h3 a:active,
           align-items: center;
 }
 
-.top-navigation .nav-menu>ul{
+.top-navigation .nav-menu>ul {
     gap: 1rem;
   }
 
 @media (min-width: 1200px) {
-    .top-navigation .nav-search-form{
+    .top-navigation .nav-search-form {
       min-width: 20%;
     }
   }
 
-.top-navigation #nav-mobile{
+.top-navigation #nav-mobile {
     display: none;
   }
+
+/* ## Header customisations:
+   1. The white top navbar is transparent to start,
+      and transitions to white background only on-scroll.
+   2. The logo is slightly bigger to start, then goes small on scroll.
+*/
+
+.home .page-content {
+    padding-top: 0; /* scoot the hero image up under the now-transparent menu */
+  }
+
+.home .top-navigation {
+    -webkit-transition: background-color 0.5s ease;
+    transition: background-color 0.5s ease;
+  }
+
+.home:not(.scrolled) .top-navigation {
+    -webkit-box-shadow: none;
+            box-shadow: none; /* drop default shadow because it'll look odd with transparent nav menu bar */
+    --color-background-navigation_bar: transparent;
+  }
+
+/* override P4 default: var(--white); */
+
+.home:not(.scrolled) .top-navigation .nav-menu {
+      --color-text-nav_link: var(--wp--preset--color--white); /* override P4 default: var(--grey-900); */
+    }
+
+.home:not(.scrolled) .top-navigation .nav-submenu {
+      --submenu-nav-link--color: var(--grey-900);
+      --submenu-nav-link--hover--color: var(--submenu-nav-link--color);
+    }
+
+.home:not(.scrolled) .top-navigation #search_form #search_input::-webkit-input-placeholder {
+        color: var(--wp--preset--color--white);
+      }
+
+.home:not(.scrolled) .top-navigation #search_form #search_input::-moz-placeholder {
+        color: var(--wp--preset--color--white);
+      }
+
+.home:not(.scrolled) .top-navigation #search_form #search_input:-ms-input-placeholder {
+        color: var(--wp--preset--color--white);
+      }
+
+.home:not(.scrolled) .top-navigation #search_form #search_input::-ms-input-placeholder {
+        color: var(--wp--preset--color--white);
+      }
+
+.home:not(.scrolled) .top-navigation #search_form #search_input, .home:not(.scrolled) .top-navigation #search_form #search_input::placeholder {
+        color: var(--wp--preset--color--white);
+      }
+
+.home:not(.scrolled) .top-navigation #search_form button .icon {
+          fill: var(--wp--preset--color--white);
+        }
+
+.home .site-logo img {
+      -webkit-transition: height 0.4s;
+      transition: height 0.4s;
+      /* bump height to get big logo (bumped up by fraction of golden ratio) */
+      height: -webkit-calc(26px + 1/2 * -webkit-calc(1.61803 * 26px - 26px));
+      height: calc(26px + 1/2 * calc(1.61803 * 26px - 26px));
+    }
+
+body.scrolled.home .site-logo img {
+        height: 26px; /* default P4 value */
+      }
 
 #footer {
   background-repeat-x: no-repeat;
@@ -104,10 +172,10 @@ h3 a:active,
 }
   }
 
-#footer h3{
+#footer h3 {
     font-size: 1rem;
     text-align: left;
-    color: white;
+    color: var(--wp--preset--color--white);
     font-weight: bold;
   }
 
@@ -118,7 +186,7 @@ h3 a:active,
     margin-bottom: 0;
   }
 
-#footer .company-message{
+#footer .company-message {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -132,56 +200,60 @@ h3 a:active,
   }
 
 #footer .company-message .primary-message,
-    #footer .company-message .secondary-message{
+    #footer .company-message .secondary-message {
       -webkit-flex-basis: 50%;
           -ms-flex-preferred-size: 50%;
               flex-basis: 50%;
       margin-bottom: 1rem;
+      max-width: 600px;
     }
 
 @media (min-width: 1200px) {
 
 #footer .footer-menu,
-  #footer .primary-message{
-      min-width: 350px
+  #footer .primary-message {
+      min-width: 350px;
+
+      max-width: 500px
   }
     }
 
-#footer .content-row{
+#footer .content-row {
     gap: 2rem;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
   }
 
-#footer #footer-logo{
+#footer #footer-logo {
     text-align: left;
     margin-bottom: 2.5rem;
   }
 
-#footer #footer-logo img{
+#footer #footer-logo img {
       max-width: 160px;
     }
 
 #footer .footer-info .address,
-    #footer .footer-info .info{
+    #footer .footer-info .info {
       margin-bottom: 2rem;
     }
 
-#footer .copyright .container{
+#footer .copyright .container {
       -webkit-box-pack: center;
       -webkit-justify-content: center;
           -ms-flex-pack: center;
               justify-content: center;
     }
 
-#footer .copyright span:not(:last-of-type):after{
+#footer .copyright span:not(:last-of-type):after {
       display: none !important;
     }
 
-@media (min-width: 768px) {
-
-.home #footer{
-      margin-top: -100px
+.home #footer {
+    margin-top: -100px;
   }
-    }
 
 @media (min-width: 768px) {
 

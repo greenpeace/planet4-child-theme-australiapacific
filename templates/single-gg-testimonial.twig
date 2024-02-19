@@ -1,0 +1,38 @@
+{% block content %}
+    <div class="clearfix"></div>
+
+    <article id="post-{{ post.ID }}">
+
+        <div class="container">
+            <header class="page-header">
+                <div class="top-page-tags">
+                    {% if ( page_type ) %}
+                        <a
+                            class="tag-item tag-item--main page-type"
+                            href="{{ fn('get_term_link', page_term_id) }}"
+                            data-ga-category="Header"
+                            data-ga-action="Post Type Tag"
+                            data-ga-label="n/a">
+                                {{ page_type|e('wp_kses_post')|raw }}
+                        </a>
+                    {% endif %}
+                </div>
+
+            </header>
+        </div>
+
+        <!-- Post Block Start -->
+        <div class="container">
+            <article class="post-details clearfix">
+                <h1 class="page-header-title">{{ post.title|raw }}</h1>
+                {{ post.content|raw }}
+            </article>
+
+            <!-- Include footer block-->
+            {{ function('get_template_content', 'footer-gg-testimonial')|e('wp_kses_post')|raw  }}
+
+        </div>
+        <!-- Post Page Block End -->
+
+    </article>    
+{% endblock %}
