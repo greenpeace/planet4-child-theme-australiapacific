@@ -282,3 +282,7 @@ body.scrolled.home .site-logo img {
 #comments{
   margin-top: 50px;
 }
+
+.has-small-font-size {
+  line-height: var(--line-height-s--font-family-tertiary);
+}
