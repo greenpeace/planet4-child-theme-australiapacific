@@ -310,4 +310,12 @@ body.scrolled.home .site-logo img {
       margin: 0 space(1) space(1) 0;
   }
 
+/* adds to some classes in: */
+/* planet4/plugins/planet4-plugin-gutenberg-blocks/assets/src/styles/blocks/core-overrides/Image.scss */
+.wp-block-image.is-style-rounded-180 img {
+    max-width: 180px;
+}
+
+.wp-block-image.is-style-rounded-90 img {
+    max-width: 90px;
 }
