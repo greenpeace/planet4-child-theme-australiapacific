@@ -26,26 +26,27 @@ Import Custom Styling
 }
 
 h3,
-h4,
-h5,
-h6 {
-  font-family: var(--font-family-secondary), sans-serif;
-}
-
-h3 a:active,
-    h3 a:visited,
-    h3 a:hover,
-    h4 a:active,
-    h4 a:visited,
-    h4 a:hover,
-    h5 a:active,
-    h5 a:visited,
-    h5 a:hover,
-    h6 a:active,
-    h6 a:visited,
-    h6 a:hover {
-      font-family: var(--font-family-secondary), sans-serif;
-    }
+  h3 a,
+  h3 a:active,
+  h3 a:visited,
+  h3 a:hover,
+  h4,
+  h4 a,
+  h4 a:active,
+  h4 a:visited,
+  h4 a:hover,
+  h5,
+  h5 a,
+  h5 a:active,
+  h5 a:visited,
+  h5 a:hover,
+  h6,
+  h6 a,
+  h6 a:active,
+  h6 a:visited,
+  h6 a:hover {
+    font-family: var(--font-family-secondary), sans-serif;
+  }
 
 @media (min-width: 1600px) {
     .container:not(.narrow-container), .container-lg:not(.narrow-container), .container-md:not(.narrow-container), .container-sm:not(.narrow-container), .container-xl:not(.narrow-container), .container-xxl:not(.narrow-container) {

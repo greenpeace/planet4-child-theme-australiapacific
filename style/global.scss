@@ -9,14 +9,12 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: var(--font-family-secondary), sans-serif;
-
-  a {
-    &:active,
-    &:visited,
-    &:hover {
-      font-family: var(--font-family-secondary), sans-serif;
-    }
+  &,
+  a,
+  a:active,
+  a:visited,
+  a:hover {
+    font-family: var(--font-family-secondary), sans-serif;
   }
 }
 
