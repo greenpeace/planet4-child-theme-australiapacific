@@ -287,6 +287,29 @@ body.scrolled.home .site-logo img {
   line-height: var(--line-height-s--font-family-tertiary);
 }
 
+/* Adds to styles set in */
+/* ../planet4-master-theme/assets/src/scss/pages/post/_article-content.scss */
+.page-content .alignright,
+.page-content .alignleft {
+  @media (min-width: 576px) {
+      padding-top: 6px;
+      max-width: 100%;
+  }
+}
+
+.page-content .alignright {
+  @media (min-width: 576px) {
+      float: right;
+      margin: 0 0 space(1) space(1);
+  }
+}
+
+.page-content .alignleft {
+  @media (min-width: 576px) {
+      float: left;
+      margin: 0 space(1) space(1) 0;
+  }
+
 /* adds to some classes in: */
 /* planet4/plugins/planet4-plugin-gutenberg-blocks/assets/src/styles/blocks/core-overrides/Image.scss */
 .wp-block-image.is-style-rounded-180 img {
