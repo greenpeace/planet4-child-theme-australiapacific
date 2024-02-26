@@ -66,3 +66,7 @@ h6 {
     max-width: 90px;
   }
 }
+
+.large-excerpt {
+  -webkit-line-clamp: 10;
+}
