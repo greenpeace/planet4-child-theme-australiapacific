@@ -86,6 +86,10 @@ h3,
     max-width: 90px;
   }
 
+.large-excerpt {
+  -webkit-line-clamp: 10;
+}
+
 .top-navigation{
   font-family: var(--font-family-secondary), sans-serif;
   -webkit-box-align: center;
