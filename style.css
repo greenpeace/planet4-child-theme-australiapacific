@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;700&display=swap");
 
 /*
 Theme Name: Greenpeace Planet 4 Australia Pacific Theme
@@ -26,32 +26,37 @@ Import Custom Styling
 }
 
 h3,
-  h3 a,
-  h3 a:active,
-  h3 a:visited,
-  h3 a:hover,
-  h4,
-  h4 a,
-  h4 a:active,
-  h4 a:visited,
-  h4 a:hover,
-  h5,
-  h5 a,
-  h5 a:active,
-  h5 a:visited,
-  h5 a:hover,
-  h6,
-  h6 a,
-  h6 a:active,
-  h6 a:visited,
-  h6 a:hover {
-    font-family: var(--font-family-secondary), sans-serif;
-  }
+h3 a,
+h3 a:active,
+h3 a:visited,
+h3 a:hover,
+h4,
+h4 a,
+h4 a:active,
+h4 a:visited,
+h4 a:hover,
+h5,
+h5 a,
+h5 a:active,
+h5 a:visited,
+h5 a:hover,
+h6,
+h6 a,
+h6 a:active,
+h6 a:visited,
+h6 a:hover {
+  font-family: var(--font-family-secondary), sans-serif;
+}
 
 @media (min-width: 1600px) {
-    .container:not(.narrow-container), .container-lg:not(.narrow-container), .container-md:not(.narrow-container), .container-sm:not(.narrow-container), .container-xl:not(.narrow-container), .container-xxl:not(.narrow-container) {
-      max-width: 1600px;
-    }
+  .container:not(.narrow-container),
+  .container-lg:not(.narrow-container),
+  .container-md:not(.narrow-container),
+  .container-sm:not(.narrow-container),
+  .container-xl:not(.narrow-container),
+  .container-xxl:not(.narrow-container) {
+    max-width: 1600px;
+  }
 }
 
 .has-small-font-size {
@@ -61,36 +66,38 @@ h3,
 /* SEE: ../planet4-master-theme/assets/src/scss/pages/post/_article-content.scss */
 
 @media (min-width: 576px) {
-    .page-content .alignright,
-    .page-content .alignleft {
-      padding-top: 6px;
-      max-width: 100%;
-    }
-    .page-content .align-right {
-      float: right;
-      margin: 0 0 space(1) space(1);
-    }
-    .page-content .align-left {
-      float: left;
-      margin: 0 space(1) space(1) 0;
-    }
+  .page-content .alignright,
+  .page-content .alignleft {
+    padding-top: 6px;
+    max-width: 100%;
+  }
+
+  .page-content .alignright {
+    float: right;
+    margin: 0 0 8px 8px;
+  }
+
+  .page-content .alignleft {
+    float: left;
+    margin: 0 8px 8px 0;
+  }
 }
 
 /* SEE: planet4/plugins/planet4-plugin-gutenberg-blocks/assets/src/styles/blocks/core-overrides/Image.scss */
 
 .wp-block-image.is-style-rounded-180 img {
-    max-width: 180px;
-  }
+  max-width: 180px;
+}
 
 .wp-block-image.is-style-rounded-90 img {
-    max-width: 90px;
-  }
+  max-width: 90px;
+}
 
 .large-excerpt {
   -webkit-line-clamp: 10;
 }
 
-.top-navigation{
+.top-navigation {
   font-family: var(--font-family-secondary), sans-serif;
   -webkit-box-align: center;
   -webkit-align-items: center;
@@ -98,19 +105,19 @@ h3,
           align-items: center;
 }
 
-.top-navigation .nav-menu>ul {
-    gap: 1rem;
-  }
+.top-navigation .nav-menu > ul {
+  gap: 1rem;
+}
 
 @media (min-width: 1200px) {
-    .top-navigation .nav-search-form {
-      min-width: 20%;
-    }
+  .top-navigation .nav-search-form {
+    min-width: 20%;
   }
+}
 
 .top-navigation #nav-mobile {
-    display: none;
-  }
+  display: none;
+}
 
 /* ## Header customisations:
    1. The white top navbar is transparent to start,
@@ -119,66 +126,63 @@ h3,
 */
 
 .home .page-content {
-    padding-top: 0; /* scoot the hero image up under the now-transparent menu */
-  }
+  padding-top: 0; /* scoot the hero image up under the now-transparent menu */
+}
 
 .home .top-navigation {
-    -webkit-transition: background-color 0.5s ease;
-    transition: background-color 0.5s ease;
-  }
+  -webkit-transition: background-color 0.5s ease;
+  transition: background-color 0.5s ease;
+}
 
 .home:not(.scrolled) .top-navigation {
-    -webkit-box-shadow: none;
-            box-shadow: none; /* drop default shadow because it'll look odd with transparent nav menu bar */
-    --color-background-navigation_bar: transparent;
-  }
-
-/* override P4 default: var(--white); */
+  -webkit-box-shadow: none;
+          box-shadow: none; /* drop default shadow because it'll look odd with transparent nav menu bar */
+  --color-background-navigation_bar: transparent; /* override P4 default: var(--white); */
+}
 
 .home:not(.scrolled) .top-navigation .nav-menu {
-      --color-text-nav_link: var(--wp--preset--color--white); /* override P4 default: var(--grey-900); */
-    }
+  --color-text-nav_link: var(--wp--preset--color--white); /* override P4 default: var(--grey-900); */
+}
 
 .home:not(.scrolled) .top-navigation .nav-submenu {
-      --submenu-nav-link--color: var(--grey-900);
-      --submenu-nav-link--hover--color: var(--submenu-nav-link--color);
-    }
+  --submenu-nav-link--color: var(--grey-900);
+  --submenu-nav-link--hover--color: var(--submenu-nav-link--color);
+}
 
 .home:not(.scrolled) .top-navigation #search_form #search_input::-webkit-input-placeholder {
-        color: var(--wp--preset--color--white);
-      }
+  color: var(--wp--preset--color--white);
+}
 
 .home:not(.scrolled) .top-navigation #search_form #search_input::-moz-placeholder {
-        color: var(--wp--preset--color--white);
-      }
+  color: var(--wp--preset--color--white);
+}
 
 .home:not(.scrolled) .top-navigation #search_form #search_input:-ms-input-placeholder {
-        color: var(--wp--preset--color--white);
-      }
+  color: var(--wp--preset--color--white);
+}
 
 .home:not(.scrolled) .top-navigation #search_form #search_input::-ms-input-placeholder {
-        color: var(--wp--preset--color--white);
-      }
+  color: var(--wp--preset--color--white);
+}
 
 .home:not(.scrolled) .top-navigation #search_form #search_input, .home:not(.scrolled) .top-navigation #search_form #search_input::placeholder {
-        color: var(--wp--preset--color--white);
-      }
+  color: var(--wp--preset--color--white);
+}
 
 .home:not(.scrolled) .top-navigation #search_form button .icon {
-          fill: var(--wp--preset--color--white);
-        }
+  fill: var(--wp--preset--color--white);
+}
 
 .home .site-logo img {
-      -webkit-transition: height 0.4s;
-      transition: height 0.4s;
-      /* bump height to get big logo (bumped up by fraction of golden ratio) */
-      height: -webkit-calc(26px + 1/2 * -webkit-calc(1.61803 * 26px - 26px));
-      height: calc(26px + 1/2 * calc(1.61803 * 26px - 26px));
-    }
+  -webkit-transition: height 0.4s;
+  transition: height 0.4s;
+  /* bump height to get big logo (bumped up by fraction of golden ratio) */
+  height: 34.03439px;
+}
 
 body.scrolled.home .site-logo img {
-        height: 26px; /* default P4 value */
-      }
+  height: 26px; /* default P4 value */
+}
 
 #footer {
   background-repeat-x: no-repeat;
@@ -192,130 +196,122 @@ body.scrolled.home .site-logo img {
 }
 
 @media (min-width: 768px) {
-
-#footer {
+  #footer {
     background-image: url(img/footer-bg.svg);
-
-    background-color: transparent
-}
+    background-color: transparent;
   }
+}
 
 @media (min-width: 1200px) {
-
-#footer {
+  #footer {
     -webkit-flex-wrap: nowrap;
         -ms-flex-wrap: nowrap;
-            flex-wrap: nowrap
-}
+            flex-wrap: nowrap;
   }
+}
 
 #footer h3 {
-    font-size: 1rem;
-    text-align: left;
-    color: var(--wp--preset--color--white);
-    font-weight: bold;
-  }
+  font-size: 1rem;
+  text-align: left;
+  color: var(--wp--preset--color--white);
+  font-weight: bold;
+}
 
 #footer p {
-    font-size: 0.875rem;
-    line-height: 1.4;
-    text-align: left;
-    margin-bottom: 0;
-  }
+  font-size: 0.875rem;
+  line-height: 1.4;
+  text-align: left;
+  margin-bottom: 0;
+}
 
 #footer .company-message {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 1rem;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+#footer .company-message .primary-message,
+#footer .company-message .secondary-message {
+  -webkit-flex-basis: 50%;
+      -ms-flex-preferred-size: 50%;
+          flex-basis: 50%;
+  margin-bottom: 1rem;
+  max-width: 600px;
+}
+
+@media (min-width: 1200px) {
+  #footer .footer-menu,
+  #footer .primary-message {
+    min-width: 350px;
+    max-width: 500px;
+  }
+}
+
+#footer .content-row {
+  gap: 2rem;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+#footer #footer-logo {
+  text-align: left;
+  margin-bottom: 2.5rem;
+}
+
+#footer #footer-logo img {
+  max-width: 160px;
+}
+
+#footer .footer-info .address,
+#footer .footer-info .info {
+  margin-bottom: 2rem;
+}
+
+#footer .copyright .container {
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+#footer .copyright span:not(:last-of-type):after {
+  display: none !important;
+}
+
+.home #footer {
+  margin-top: -100px;
+}
+
+@media (min-width: 768px) {
+  .home .articles-block .article-list-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
     gap: 1rem;
+  }
+
+  .home .articles-block .article-list-section .article-list-item {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
     -webkit-flex-direction: column;
         -ms-flex-direction: column;
             flex-direction: column;
+    margin-top: 0;
   }
+}
 
-#footer .company-message .primary-message,
-    #footer .company-message .secondary-message {
-      -webkit-flex-basis: 50%;
-          -ms-flex-preferred-size: 50%;
-              flex-basis: 50%;
-      margin-bottom: 1rem;
-      max-width: 600px;
-    }
+.wp-block-media-text .wp-block-media-text__content {
+  padding: 0;
+}
 
-@media (min-width: 1200px) {
-
-#footer .footer-menu,
-  #footer .primary-message {
-      min-width: 350px;
-
-      max-width: 500px
-  }
-    }
-
-#footer .content-row {
-    gap: 2rem;
-    -webkit-box-pack: justify;
-    -webkit-justify-content: space-between;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-  }
-
-#footer #footer-logo {
-    text-align: left;
-    margin-bottom: 2.5rem;
-  }
-
-#footer #footer-logo img {
-      max-width: 160px;
-    }
-
-#footer .footer-info .address,
-    #footer .footer-info .info {
-      margin-bottom: 2rem;
-    }
-
-#footer .copyright .container {
-      -webkit-box-pack: center;
-      -webkit-justify-content: center;
-          -ms-flex-pack: center;
-              justify-content: center;
-    }
-
-#footer .copyright span:not(:last-of-type):after {
-      display: none !important;
-    }
-
-.home #footer {
-    margin-top: -100px;
-  }
-
-@media (min-width: 768px) {
-
-.home .articles-block .article-list-section {
-        display: grid;
-
-        grid-template-columns: 1fr 1fr 1fr 1fr;
-
-        gap: 1rem
-    }
-
-        .home .articles-block .article-list-section .article-list-item {
-          -webkit-box-orient: vertical;
-          -webkit-box-direction: normal;
-          -webkit-flex-direction: column;
-              -ms-flex-direction: column;
-                  flex-direction: column;
-          margin-top: 0;
-        }
-      }
-
-.wp-block-media-text .wp-block-media-text__content{
-    padding: 0;
-  }
-
-#comments{
+#comments {
   margin-top: 50px;
 }

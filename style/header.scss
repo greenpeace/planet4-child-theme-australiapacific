@@ -57,9 +57,11 @@
       transition: height 0.4s;
       /* bump height to get big logo (bumped up by fraction of golden ratio) */
       height: calc(26px + 1/2 * calc(1.61803 * 26px - 26px));
-      body.scrolled& {
-        height: 26px; /* default P4 value */
-      }
     }
   }
 }
+
+body.scrolled.home .site-logo img {
+  height: 26px; /* default P4 value */
+}
+
