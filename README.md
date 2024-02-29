@@ -11,3 +11,6 @@ Please check the master theme code for more information.
 Ensure you have the following dependencies installed:
 - python3
 - [python-setuptools](https://formulae.brew.sh/formula/python-setuptools)
+
+Also, ensure that you've run `npm run env:install` to get the SCSS files required
+in the master theme, as we rely on some of the SCSS variables in our theme.
