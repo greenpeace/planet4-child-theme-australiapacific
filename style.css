@@ -97,6 +97,16 @@ h6 a:hover {
   -webkit-line-clamp: 10;
 }
 
+@media (max-width: 992px) {
+  .wp-block-columns {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
 .top-navigation {
   font-family: var(--font-family-secondary), sans-serif;
   -webkit-box-align: center;
