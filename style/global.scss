@@ -71,7 +71,10 @@ h6 {
 }
 
 .large-excerpt {
-  -webkit-line-clamp: 10;
+  &,
+  & * {
+    -webkit-line-clamp: 10 !important;
+  }
 }
 
 .wp-block-columns {

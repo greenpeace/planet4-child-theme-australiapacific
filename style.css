@@ -93,8 +93,8 @@ h6 a:hover {
   max-width: 90px;
 }
 
-.large-excerpt {
-  -webkit-line-clamp: 10;
+.large-excerpt, .large-excerpt * {
+  -webkit-line-clamp: 10 !important;
 }
 
 @media (max-width: 992px) {
