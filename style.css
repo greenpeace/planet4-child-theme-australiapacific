@@ -107,6 +107,18 @@ h6 a:hover {
   }
 }
 
+@media (min-width: 1200px) {
+  #footer {
+    margin-top: -5rem;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1200px) {
+  #footer {
+    margin-top: -6rem;
+  }
+}
+
 .top-navigation {
   font-family: var(--font-family-secondary), sans-serif;
   -webkit-box-align: center;
