@@ -108,13 +108,13 @@ h6 a:hover {
 }
 
 @media (min-width: 1200px) {
-  #footer {
+  :has(.footer-cta) + #footer {
     margin-top: -5rem;
   }
 }
 
 @media (min-width: 768px) and (max-width: 1200px) {
-  #footer {
+  :has(.footer-cta) + #footer {
     margin-top: -6rem;
   }
 }

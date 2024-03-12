@@ -82,7 +82,7 @@ h6 {
   }
 }
 
-#footer {
+:has(.footer-cta) + #footer {
   @media (min-width: $extra-large-width) {
     margin-top: -5rem;
   }
