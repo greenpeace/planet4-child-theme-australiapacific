@@ -107,6 +107,12 @@ h6 a:hover {
   }
 }
 
+nav * {
+  font-family: var(--font-family-primary);
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
 .top-navigation {
   font-family: var(--font-family-secondary), sans-serif;
   -webkit-box-align: center;
