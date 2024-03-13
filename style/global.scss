@@ -82,3 +82,9 @@ h6 {
     flex-direction: column;
   }
 }
+
+nav * {
+  font-family: var(--font-family-primary);
+  font-weight: bold;
+  text-transform: uppercase;
+}
