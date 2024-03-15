@@ -23,6 +23,8 @@ Import Custom Styling
   --font-family-tertiary: "Work Sans";
   --font-family-button: "Work Sans";
   --footer-menu--li--font-size: 15px;
+  --button-secondary--background: white;
+  --button-secondary--hover--border-color: white;
 }
 
 h3,
