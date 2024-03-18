@@ -113,6 +113,11 @@ nav * {
   text-transform: uppercase;
 }
 
+.report-covers .content-covers-block .report-covers .content-covers-block-wrap .report-covers .content-covers-block-image img {
+  height: unset;
+  aspect-ratio: 4/6;
+}
+
 .top-navigation {
   font-family: var(--font-family-secondary), sans-serif;
   -webkit-box-align: center;
