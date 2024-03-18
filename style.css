@@ -113,6 +113,10 @@ nav * {
   text-transform: uppercase;
 }
 
+mark {
+  margin: -0.2em;
+}
+
 .top-navigation {
   font-family: var(--font-family-secondary), sans-serif;
   -webkit-box-align: center;
