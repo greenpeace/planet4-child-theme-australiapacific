@@ -113,6 +113,14 @@ nav * {
   text-transform: uppercase;
 }
 
+.home:not(.scrolled) .top-navigation .icon {
+  fill: white;
+}
+
+.with-mobile-tabs ~ :not(.page-header) + .page-content {
+  padding-top: 0;
+}
+
 .top-navigation {
   font-family: var(--font-family-secondary), sans-serif;
   -webkit-box-align: center;
