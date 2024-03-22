@@ -9,7 +9,6 @@
   --button--padding: 0.75rem 2rem;
 }
 
-
 h3,
 h4,
 h5,
@@ -89,4 +88,11 @@ nav * {
   font-family: var(--font-family-primary);
   font-weight: bold;
   text-transform: uppercase;
+}
+
+@media (min-width: $medium-width) {
+  .footer-cta {
+    margin-bottom: -100px;
+    padding-bottom: 180px;
+  }
 }

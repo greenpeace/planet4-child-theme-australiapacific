@@ -115,6 +115,13 @@ nav * {
   text-transform: uppercase;
 }
 
+@media (min-width: 768px) {
+  .footer-cta {
+    margin-bottom: -100px;
+    padding-bottom: 180px;
+  }
+}
+
 .top-navigation {
   font-family: var(--font-family-secondary), sans-serif;
   -webkit-box-align: center;
