@@ -38,6 +38,7 @@
                         <span class="main-tag-chevron" aria-hidden="true"></span>
                     {% endif %}
 
+
                     {% if ( post.issues_nav_data ) %}
                         <div class="tag-wrap issues">
                             {% for issue in post.issues_nav_data %}
@@ -93,7 +94,7 @@
                     </div>
                 </div>
                 {% include "blocks/share_buttons.twig" with {social:post.share_meta, utm_medium: 'share'} %}
-                
+
                 <!-- Include archive block-->
                 {% if 'archive' in post.tags|map(attribute => attribute.slug) %}
                     {{ function('get_template_content', 'archive')|e('wp_kses_post')|raw }}
@@ -113,6 +114,16 @@
                     {% endif %}
                 </article>
             </div>
+            {% if ( featured_action ) %}
+                {% include 'featured-action.twig'
+                    with {
+                        'image': featured_action_image,
+                        'post_title': featured_action.post_title,
+                        'post_excerpt': featured_action.post_excerpt,
+                        'url': featured_action_url
+                    }
+                %}
+            {% endif %}
             <div class="post-tags">
                 {% if ( post.tags ) %}
                     {% for tag in post.tags %}
@@ -141,5 +152,5 @@
             {% include "comments_section.twig" with {comments:post.get_comments()} %}
         {% endif %}
     </article>
-    {% endif %} 
+    {% endif %}
 {% endblock %}
