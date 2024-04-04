@@ -1,0 +1,83 @@
+/** This file brings over the adhoc styles from the dev site */
+
+
+/* Removes padding on span styles eg when font color changed within text */
+mark.has-inline-color {
+    padding: 0em !important;
+}
+
+.carousel-caption h2 {
+	text-transform:uppercase;
+}
+
+.block {
+    margin-bottom: 0;
+    margin-top: 0;
+}
+
+#footer.footer{
+    margin-top: 	0px!important;
+}
+
+.wp-element-caption {
+    position: relative;
+    padding-left: 27px;
+	text-align: left!important;
+	font-weight:bold;
+}
+
+.wp-element-caption:before {
+    content: "";
+    position: absolute;
+    top: 2px;
+    left: 0;
+}
+
+
+.wp-element-caption:before {
+    width: 4px;
+    height: 13px;
+    background: #000;
+}
+
+blockquote, blockquote>p {
+max-width:100%!important;
+}
+
+/* Social Block Styles */
+a.wp-block-social-link-anchor::after {
+	display:none;
+}
+
+.wp-block-social-links.is-style-logos-only .wp-social-link svg {
+    height: 1.7em;
+    width: 1.7em;
+}
+
+
+
+/* New Styles */
+
+.column-padding {
+	padding: 20px;
+}
+
+/* Circle Article Styles */
+
+.circle-article img {
+    border-radius: 50%;
+	max-width:180px;
+	max-height:180px;
+}
+
+.circle-article .article-list-item-meta {
+    display: none;
+}
+
+.circle-article .article-list-item-image {
+    text-align: center;
+}
+
+.full-excerpt .posts-list-query .wp-block-post-excerpt__excerpt {
+    -webkit-line-clamp: 10!important;
+}
