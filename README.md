@@ -14,3 +14,8 @@ Ensure you have the following dependencies installed:
 
 Also, ensure that you've run `npm run env:install` to get the SCSS files required
 in the master theme, as we rely on some of the SCSS variables in our theme.
+
+## Releases & Deploymentk
+
+Currently, our deployment pipeline only matches tags which look like `v1.*` so
+if we ever upgrade to v2+ then we will need to edit that [here](https://github.com/greenpeace/planet4-australiapacific/blob/main/production.json).
