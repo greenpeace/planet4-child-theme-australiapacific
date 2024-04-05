@@ -382,7 +382,8 @@ mark.has-inline-color {
   background: #000;
 }
 
-blockquote, blockquote > p {
+blockquote,
+blockquote > p {
   max-width: 100% !important;
 }
 
@@ -403,20 +404,12 @@ a.wp-block-social-link-anchor::after {
   padding: 20px;
 }
 
-/* Circle Article Styles */
+/* Featured Images in article blocks */
 
-.circle-article img {
+.featured-image-rounded-180 img {
   border-radius: 50%;
-  max-width: 180px;
-  max-height: 180px;
-}
-
-.circle-article .article-list-item-meta {
-  display: none;
-}
-
-.circle-article .article-list-item-image {
-  text-align: center;
+  width: 180px;
+  height: 180px;
 }
 
 .full-excerpt .posts-list-query .wp-block-post-excerpt__excerpt {
