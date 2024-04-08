@@ -121,6 +121,31 @@ nav * {
   }
 }
 
+@media (min-width: 992px) {
+  header .site-logo {
+    margin-left: -webkit-calc((100vw - var(--mw)) / 2 + 12px);
+    margin-left: calc((100vw - var(--mw)) / 2 + 12px);
+  }
+}
+
+@media (max-width: 1600px) {
+  header .site-logo {
+    --mw: 1140px;
+  }
+}
+
+@media (min-width: 1600px) {
+  header .site-logo {
+    --mw: 1600px;
+  }
+}
+
+@media (max-width: 1200px) {
+  header .site-logo {
+    --mw: 960px;
+  }
+}
+
 .top-navigation {
   font-family: var(--font-family-secondary), sans-serif;
   -webkit-box-align: center;
