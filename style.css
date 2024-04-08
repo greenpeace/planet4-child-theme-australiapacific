@@ -25,6 +25,8 @@ Import Custom Styling
   --footer-menu--li--font-size: 15px;
   --button--line-height: 1.3em;
   --button--padding: 0.75rem 2rem;
+  --button-secondary--background: white;
+  --button-secondary--hover--border-color: white;
 }
 
 h3,
@@ -118,6 +120,31 @@ nav * {
   .footer-cta {
     margin-bottom: -100px;
     padding-bottom: 180px;
+  }
+}
+
+@media (min-width: 992px) {
+  header .site-logo {
+    margin-left: -webkit-calc((100vw - var(--mw)) / 2 + 12px);
+    margin-left: calc((100vw - var(--mw)) / 2 + 12px);
+  }
+}
+
+@media (max-width: 1600px) {
+  header .site-logo {
+    --mw: 1140px;
+  }
+}
+
+@media (min-width: 1600px) {
+  header .site-logo {
+    --mw: 1600px;
+  }
+}
+
+@media (max-width: 1200px) {
+  header .site-logo {
+    --mw: 960px;
   }
 }
 
