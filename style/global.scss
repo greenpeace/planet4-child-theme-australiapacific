@@ -95,3 +95,26 @@ nav * {
     padding-bottom: 180px;
   }
 }
+
+header .site-logo {
+  // This stuff ensures that the nav logo is aligned with the footer logo
+  @media (min-width: $large-width) {
+    // Basically the footer logo is within a container with a max width
+    // and a margin: auto, plus 12px of padding. So the below calculation
+    // re-creates that spacing as a left-margin
+    // then --mw is set to a different value for different screen widths
+    margin-left: calc(((100vw - var(--mw)) / 2) + 12px);
+  }
+
+  @media (max-width: $extra-extra-large-width) {
+    --mw: 1140px;
+  }
+
+  @media (min-width: $extra-extra-large-width) {
+    --mw: 1600px;
+  }
+
+  @media (max-width: $extra-large-width) {
+    --mw: 960px;
+  }
+}
