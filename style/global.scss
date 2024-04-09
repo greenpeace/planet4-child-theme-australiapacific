@@ -118,3 +118,12 @@ header .site-logo {
     --mw: 960px;
   }
 }
+
+.report-covers .content-covers-block {
+  & &-wrap &-image img {
+    // aspect-ratio only works when either height or width is not set,
+    // and we want it to be full-width so we unset the height.
+    height: unset;
+    aspect-ratio: 4 / 6;
+  }
+}
