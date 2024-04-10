@@ -367,12 +367,6 @@ body.scrolled.home .site-logo img {
 
 /** This file brings over the adhoc styles from the dev site */
 
-/* Removes padding on span styles eg when font color changed within text */
-
-mark.has-inline-color {
-  padding: 0em !important;
-}
-
 .carousel-caption h2 {
   text-transform: uppercase;
 }
