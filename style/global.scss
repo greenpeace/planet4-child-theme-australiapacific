@@ -118,3 +118,8 @@ header .site-logo {
     --mw: 960px;
   }
 }
+
+// Target marks with no background colour (gutenberg sets this to `rgba(0, 0, 0, 0)`)
+mark[style="background-color:rgba(0, 0, 0, 0)"] {
+  padding: 0 !important;
+}
