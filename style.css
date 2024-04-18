@@ -340,10 +340,6 @@ body.scrolled.home .site-logo img {
   display: none !important;
 }
 
-.home #footer {
-  margin-top: -100px;
-}
-
 @media (min-width: 768px) {
   .home .articles-block .article-list-section {
     display: grid;
