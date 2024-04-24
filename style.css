@@ -194,7 +194,9 @@ mark[style="background-color:rgba(0, 0, 0, 0)"] {
 }
 
 .home:not(.scrolled) .top-navigation .nav-menu {
-  --color-text-nav_link: var(--wp--preset--color--white); /* override P4 default: var(--grey-900); */
+  --color-text-nav_link: var(
+    --wp--preset--color--white
+  ); /* override P4 default: var(--grey-900); */
 }
 
 .home:not(.scrolled) .top-navigation .nav-submenu {
@@ -202,24 +204,23 @@ mark[style="background-color:rgba(0, 0, 0, 0)"] {
   --submenu-nav-link--hover--color: var(--submenu-nav-link--color);
 }
 
-.home:not(.scrolled) .top-navigation #search_form #search_input::-webkit-input-placeholder {
-  color: var(--wp--preset--color--white);
-}
-
-.home:not(.scrolled) .top-navigation #search_form #search_input::-moz-placeholder {
-  color: var(--wp--preset--color--white);
-}
-
-.home:not(.scrolled) .top-navigation #search_form #search_input:-ms-input-placeholder {
-  color: var(--wp--preset--color--white);
-}
-
-.home:not(.scrolled) .top-navigation #search_form #search_input::-ms-input-placeholder {
-  color: var(--wp--preset--color--white);
-}
-
-.home:not(.scrolled) .top-navigation #search_form #search_input, .home:not(.scrolled) .top-navigation #search_form #search_input::placeholder {
-  color: var(--wp--preset--color--white);
+@media (min-width: 1200px) {
+  .home:not(.scrolled) .top-navigation #search_form #search_input::-webkit-input-placeholder {
+    color: var(--wp--preset--color--white);
+  }
+  .home:not(.scrolled) .top-navigation #search_form #search_input::-moz-placeholder {
+    color: var(--wp--preset--color--white);
+  }
+  .home:not(.scrolled) .top-navigation #search_form #search_input:-ms-input-placeholder {
+    color: var(--wp--preset--color--white);
+  }
+  .home:not(.scrolled) .top-navigation #search_form #search_input::-ms-input-placeholder {
+    color: var(--wp--preset--color--white);
+  }
+  .home:not(.scrolled) .top-navigation #search_form #search_input,
+  .home:not(.scrolled) .top-navigation #search_form #search_input::placeholder {
+    color: var(--wp--preset--color--white);
+  }
 }
 
 .home:not(.scrolled) .top-navigation #search_form button .icon {
