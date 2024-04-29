@@ -1,0 +1,68 @@
+/** This file brings over the adhoc styles from the dev site */
+
+.carousel-caption h2 {
+  text-transform: uppercase;
+}
+
+.block {
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+#footer.footer {
+  margin-top: 0px !important;
+}
+
+.wp-element-caption {
+  position: relative;
+  padding-left: 27px;
+  text-align: left !important;
+  font-weight: bold;
+}
+
+.wp-element-caption:before {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 0;
+}
+
+.wp-element-caption:before {
+  width: 4px;
+  height: 13px;
+  background: #000;
+}
+
+blockquote,
+blockquote > p {
+  max-width: 100% !important;
+}
+
+/* Social Block Styles */
+a.wp-block-social-link-anchor::after {
+  display: none;
+}
+
+.wp-block-social-links.is-style-logos-only .wp-social-link svg {
+  height: 1.7em;
+  width: 1.7em;
+}
+
+/* New Styles */
+
+.column-padding {
+  padding: 20px;
+}
+
+/* Featured Images in article blocks */
+.featured-image-rounded-180 {
+  img {
+    border-radius: 50%;
+    width: 180px;
+    height: 180px;
+  }
+}
+
+.full-excerpt .posts-list-query .wp-block-post-excerpt__excerpt {
+  -webkit-line-clamp: 10 !important;
+}

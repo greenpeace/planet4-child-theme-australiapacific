@@ -1,7 +1,7 @@
-.top-navigation{
+.top-navigation {
   font-family: var(--font-family-secondary), sans-serif;
   align-items: center;
-  .nav-menu>ul {
+  .nav-menu > ul {
     gap: 1rem;
   }
   @media (min-width: 1200px) {
@@ -32,7 +32,9 @@
 
     --color-background-navigation_bar: transparent; /* override P4 default: var(--white); */
     .nav-menu {
-      --color-text-nav_link: var(--wp--preset--color--white); /* override P4 default: var(--grey-900); */
+      --color-text-nav_link: var(
+        --wp--preset--color--white
+      ); /* override P4 default: var(--grey-900); */
     }
 
     .nav-submenu {
@@ -41,8 +43,11 @@
     }
 
     #search_form {
-      #search_input, #search_input::placeholder {
+      #search_input,
+      #search_input::placeholder {
+        @media (min-width: 1200px) {
           color: var(--wp--preset--color--white);
+        }
       }
       button {
         .icon {
@@ -56,10 +61,11 @@
     img {
       transition: height 0.4s;
       /* bump height to get big logo (bumped up by fraction of golden ratio) */
-      height: calc(26px + 1/2 * calc(1.61803 * 26px - 26px));
-      body.scrolled& {
-        height: 26px; /* default P4 value */
-      }
+      height: calc(26px + 1 / 2 * calc(1.61803 * 26px - 26px));
     }
   }
+}
+
+body.scrolled.home .site-logo img {
+  height: 26px; /* default P4 value */
 }

@@ -3,7 +3,7 @@
 
     <article id="post-{{ post.ID }}">
 
-        <div class="container">
+        <div class="container narrow-container">
             <header class="page-header">
                 <div class="top-page-tags">
                     {% if ( page_type ) %}
@@ -22,7 +22,7 @@
         </div>
 
         <!-- Post Block Start -->
-        <div class="container">
+        <div class="container narrow-container">
             <article class="post-details clearfix">
                 <h1 class="page-header-title">{{ post.title|raw }}</h1>
                 {{ post.content|raw }}
@@ -30,5 +30,5 @@
         </div>
         <!-- Post Page Block End -->
 
-    </article>    
+    </article>
 {% endblock %}

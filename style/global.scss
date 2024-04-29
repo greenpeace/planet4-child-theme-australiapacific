@@ -1,22 +1,24 @@
+@use "../../planet4-master-theme/assets/src/scss/base/_variables.scss" as *;
+
 :root {
-  --font-family-secondary: 'Work Sans';
-  --font-family-tertiary: 'Work Sans';
-  --font-family-button: 'Work Sans';
+  --font-family-secondary: "Work Sans";
+  --font-family-tertiary: "Work Sans";
+  --font-family-button: "Work Sans";
   --footer-menu--li--font-size: 15px;
+  --button--line-height: 1.3em;
+  --button--padding: 0.75rem 2rem;
 }
 
 h3,
 h4,
 h5,
-h6{
-  font-family: var(--font-family-secondary), sans-serif;
-
-  a{
-    &:active,
-    &:visited,
-    &:hover {
-      font-family: var(--font-family-secondary), sans-serif;
-    }
+h6 {
+  &,
+  a,
+  a:active,
+  a:visited,
+  a:hover {
+    font-family: var(--font-family-secondary), sans-serif;
   }
 }
 
@@ -27,8 +29,97 @@ h6{
   .container-sm,
   .container-xl,
   .container-xxl {
-    &:not(.narrow-container){
+    &:not(.narrow-container) {
       max-width: 1600px;
     }
   }
+}
+
+.has-small-font-size {
+  line-height: var(--line-height-s--font-family-tertiary);
+}
+
+/* SEE: ../planet4-master-theme/assets/src/scss/pages/post/_article-content.scss */
+@media (min-width: 576px) {
+  .page-content {
+    .alignright,
+    .alignleft {
+      padding-top: 6px;
+      max-width: 100%;
+    }
+
+    .alignright {
+      float: right;
+      margin: 0 0 $sp-1 $sp-1;
+    }
+
+    .alignleft {
+      float: left;
+      margin: 0 $sp-1 $sp-1 0;
+    }
+  }
+}
+
+/* SEE: planet4/plugins/planet4-plugin-gutenberg-blocks/assets/src/styles/blocks/core-overrides/Image.scss */
+.wp-block-image {
+  &.is-style-rounded-180 img {
+    max-width: 180px;
+  }
+
+  &.is-style-rounded-90 img {
+    max-width: 90px;
+  }
+}
+
+.large-excerpt {
+  &,
+  & * {
+    -webkit-line-clamp: 10 !important;
+  }
+}
+
+.wp-block-columns {
+  @media (max-width: 992px) {
+    flex-direction: column;
+  }
+}
+
+nav * {
+  font-family: var(--font-family-primary);
+  text-transform: uppercase;
+}
+
+@media (min-width: $medium-width) {
+  .footer-cta {
+    margin-bottom: -100px !important;
+    padding-bottom: 180px !important;
+  }
+}
+
+header .site-logo {
+  // This stuff ensures that the nav logo is aligned with the footer logo
+  @media (min-width: $large-width) {
+    // Basically the footer logo is within a container with a max width
+    // and a margin: auto, plus 12px of padding. So the below calculation
+    // re-creates that spacing as a left-margin
+    // then --mw is set to a different value for different screen widths
+    margin-left: calc(((100vw - var(--mw)) / 2) + 12px);
+  }
+
+  @media (max-width: $extra-extra-large-width) {
+    --mw: 1140px;
+  }
+
+  @media (min-width: $extra-extra-large-width) {
+    --mw: 1600px;
+  }
+
+  @media (max-width: $extra-large-width) {
+    --mw: 960px;
+  }
+}
+
+// Target marks with no background colour (gutenberg sets this to `rgba(0, 0, 0, 0)`)
+mark[style="background-color:rgba(0, 0, 0, 0)"] {
+  padding: 0 !important;
 }
