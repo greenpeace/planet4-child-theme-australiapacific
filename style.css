@@ -246,6 +246,10 @@ body.scrolled.home .site-logo img {
   height: 26px; /* default P4 value */
 }
 
+.nav-search-toggle {
+  --top-navigation--search-toggle--background: var(--grey-800);
+}
+
 #footer {
   background-repeat-x: no-repeat;
   background-repeat-y: repeat;
