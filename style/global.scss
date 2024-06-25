@@ -131,3 +131,11 @@ mark[style="background-color:rgba(0, 0, 0, 0)"] {
 .with-mobile-tabs ~ :not(.page-header) + .page-content {
   padding-top: 0;
 }
+
+// This is an optimonk thing, their z-index is ridiculously high and we can't
+// display anything above it, so we are setting it lower here.
+// We were prompted to do this so it sits below our cookie consent block.
+// See https://github.com/greenpeace/planet4-child-theme-australiapacific/pull/77/
+.om-holder {
+  z-index: 99;
+}
