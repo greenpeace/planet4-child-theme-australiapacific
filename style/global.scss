@@ -136,6 +136,6 @@ mark[style="background-color:rgba(0, 0, 0, 0)"] {
 // display anything above it, so we are setting it lower here.
 // We were prompted to do this so it sits below our cookie consent block.
 // See https://github.com/greenpeace/planet4-child-theme-australiapacific/pull/77/
-.om-holder {
+.om-holder.om-holder {
   z-index: 99;
 }

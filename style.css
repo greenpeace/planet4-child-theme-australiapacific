@@ -158,7 +158,7 @@ mark[style="background-color:rgba(0, 0, 0, 0)"] {
   padding-top: 0;
 }
 
-.om-holder {
+.om-holder.om-holder {
   z-index: 99;
 }
 
