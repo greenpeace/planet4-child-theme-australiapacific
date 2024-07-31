@@ -48,14 +48,14 @@ h6 {
       max-width: 100%;
     }
 
-    .alignright {
+    .align-right {
       float: right;
-      margin: 0 0 $sp-1 $sp-1;
+      margin: 0 0 space(1) space(1);
     }
 
-    .alignleft {
+    .align-left {
       float: left;
-      margin: 0 $sp-1 $sp-1 0;
+      margin: 0 space(1) space(1) 0;
     }
   }
 }
