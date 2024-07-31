@@ -74,12 +74,12 @@ h6 a:hover {
     max-width: 100%;
   }
 
-  .page-content .alignright {
+  .page-content .align-right {
     float: right;
     margin: 0 0 8px 8px;
   }
 
-  .page-content .alignleft {
+  .page-content .align-left {
     float: left;
     margin: 0 8px 8px 0;
   }
