@@ -39,27 +39,6 @@ h6 {
   line-height: var(--line-height-s--font-family-tertiary);
 }
 
-/* SEE: ../planet4-master-theme/assets/src/scss/pages/post/_article-content.scss */
-@media (min-width: 576px) {
-  .page-content {
-    .alignright,
-    .alignleft {
-      padding-top: 6px;
-      max-width: 100%;
-    }
-
-    .align-right {
-      float: right;
-      margin: 0 0 space(1) space(1);
-    }
-
-    .align-left {
-      float: left;
-      margin: 0 space(1) space(1) 0;
-    }
-  }
-}
-
 /* SEE: planet4/plugins/planet4-plugin-gutenberg-blocks/assets/src/styles/blocks/core-overrides/Image.scss */
 .wp-block-image {
   &.is-style-rounded-180 img {
