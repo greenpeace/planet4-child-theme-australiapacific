@@ -43,3 +43,11 @@ function get_template_content($name = null){
 }
 
 add_action('wp_enqueue_scripts', 'register_custom_script');
+
+// Allow Gutenberg core blocks
+function p4_child_theme_gpap_whitelist_blocks( $allowed_blocks, $post ) {
+	$allowed = is_array($allowed_blocks) ? $allowed_blocks : array();
+	array_push($allowed, 'core/post-author');
+	return $allowed;
+}
+add_filter('allowed_block_types', 'p4_child_theme_gpap_whitelist_blocks', 11, 2);
