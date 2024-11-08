@@ -48,7 +48,7 @@ add_action('wp_enqueue_scripts', 'register_custom_script');
 function p4_child_theme_gpap_whitelist_blocks( $allowed_blocks, $post ) {
 	$allowed = is_array($allowed_blocks) ? $allowed_blocks : array();
   array_push($allowed, 'core/cover');
-	array_push($allowed, 'core/post-title');
+  array_push($allowed, 'core/post-title');
   array_push($allowed, 'core/post-excerpt');
   array_push($allowed, 'core/post-featured-image');
   array_push($allowed, 'core/post-content');
