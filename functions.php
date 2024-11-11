@@ -59,4 +59,4 @@ function p4_child_theme_gpap_add_allowed_blocks( $allowed_blocks, $post ) {
   array_push($allowed, 'core/post-tags');
 	return $allowed;
 }
-add_filter('allowed_block_types', 'p4_child_theme_gpap_whitelist_blocks', 11, 2);
+add_filter('allowed_block_types', 'p4_child_theme_gpap_add_allowed_blocks', 11, 2);
