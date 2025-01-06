@@ -46,17 +46,20 @@ add_action('wp_enqueue_scripts', 'register_custom_script');
 
 // Allow Gutenberg core blocks
 function p4_child_theme_gpap_add_allowed_blocks( $allowed_blocks, $post ) {
-	$allowed = is_array($allowed_blocks) ? $allowed_blocks : array();
-  array_push($allowed, 'core/cover');
-  array_push($allowed, 'core/post-title');
-  array_push($allowed, 'core/post-excerpt');
-  array_push($allowed, 'core/post-featured-image');
-  array_push($allowed, 'core/post-content');
-  array_push($allowed, 'core/post-author');
-  array_push($allowed, 'core/post-date');
-  array_push($allowed, 'core/post-modified-date');
-  array_push($allowed, 'core/post-categories');
-  array_push($allowed, 'core/post-tags');
-	return $allowed;
+  if(!is_array($allowed_blocks)){
+    return $allowed_blocks;
+  }
+	//$allowed = is_array($allowed_blocks) ? $allowed_blocks : array();
+  array_push($allowed_blocks, 'core/post-title');
+  array_push($allowed_blocks, 'core/cover');
+  array_push($allowed_blocks, 'core/post-excerpt');
+  array_push($allowed_blocks, 'core/post-featured-image');
+  array_push($allowed_blocks, 'core/post-content');
+  array_push($allowed_blocks, 'core/post-author');
+  array_push($allowed_blocks, 'core/post-date');
+  array_push($allowed_blocks, 'core/post-modified-date');
+  array_push($allowed_blocks, 'core/post-categories');
+  array_push($allowed_blocks, 'core/post-tags');
+	return $allowed_blocks;
 }
-add_filter('allowed_block_types', 'p4_child_theme_gpap_add_allowed_blocks', 11, 2);
+add_filter('allowed_block_types_all', 'p4_child_theme_gpap_add_allowed_blocks', 10, 1);
