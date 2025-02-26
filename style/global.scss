@@ -118,3 +118,10 @@ mark[style="background-color:rgba(0, 0, 0, 0)"] {
 .om-holder.om-holder {
   z-index: 99;
 }
+
+/* Styling for list card thumbnails */
+
+.gpap-list-card-thumbnail {
+  box-shadow: 0 1px 8px 0 rgba(0, 0, 0, 0.16);
+  padding: 1rem;
+}
