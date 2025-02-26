@@ -140,10 +140,12 @@ Context::set_p4_blocks_datalayer($context, $post);
  */
 function set_featured_action(&$context)
 {
-    $category = $post->issues_nav_data[0]['name'] ?? null;
+    // Get the categories associated with the current post
+    $categories = get_the_category($post->ID);
+    $category_slug = !empty($categories) ? $categories[0]->slug : null; // Assuming the first category is the one you want
     $featured_action = get_posts([
         'post_type' => 'p4_action',
-        'category' => $category,
+        'category_name' => $category_slug,  // Use category slug here instead of 'category'
         'orderby' => 'date',
         'order' => 'DESC',
         'numberposts' => 1,
