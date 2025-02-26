@@ -65,6 +65,12 @@ h6 a:hover {
   line-height: var(--line-height-s--font-family-tertiary);
 }
 
+/* GPAP typography style overides */
+
+h1 {
+  text-transform:uppercase;
+}
+
 /* SEE: planet4/plugins/planet4-plugin-gutenberg-blocks/assets/src/styles/blocks/core-overrides/Image.scss */
 
 .wp-block-image.is-style-rounded-180 img {
