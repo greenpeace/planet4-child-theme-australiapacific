@@ -15,17 +15,11 @@ Fixes #
 <!-- 🎨 Fun tip: add emoji to your git commits with https://gitmoji.carloscuesta.me/ -->
 
 Reviewer checklist:
-- [ ] ✨ This PR includes new user-facing feature and/or settings
-- [ ] 📝 Documentation for new features/settings are in PR description (to go to wiki or Coral docs) 
+- [ ] ✨ This PR is an enhancement (new features etc)
+- [ ] 🐛 This PR fixes a bug
+- [ ] 📝 Documentation was needed and has been updated in Notion -> P4-Planet-4-Technical-Documentation   
 
 Contributor checklist:
-- [ ] Reference a GitHub issue, Jira ticket, or Notion card in the description 💯
-- [ ] 📝 Update the CHANGELOG.md (Put under `[Unreleased]`). Include link to this PR.
-- [ ] 📝 Add JSDoc code documentation
-- [ ] 🏷 Add flow types. (If needed.)
-- [ ] ✅ Add unit tests (`*.test.js`) and/or Cypress Tests.
-- [ ] 📖 Create Storybook stories. (For any applicable Components.)
-- [ ] 📸 Update snapshots.  Run `yarn test:watch`, press 'a' for "all tests", and "u" to update snaps if needed.
-- [ ] Run tests (`yarn test` and `yarn flow`) and clean up any errors 🚀
+- [ ] Reference a GitHub issue or Notion card in the description 💯
 - [ ] Select 1-2 Reviewers
 - [x] Feel good about yourself, you're doing great! 🥳
