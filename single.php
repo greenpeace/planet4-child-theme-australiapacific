@@ -168,9 +168,11 @@ if (post_password_required($post->ID)) {
 
     $context['login_url'] = wp_login_url();
 
+    do_action('enqueue_google_tag_manager_script', $context);
     Timber::render('single-password.twig', $context);
 } else {
     set_featured_action($context);
+    do_action('enqueue_google_tag_manager_script', $context);
     Timber::render(
         [ 'single-' . $post->ID . '.twig', 'single-' . $post->post_type . '.twig', 'single.twig' ],
         $context
