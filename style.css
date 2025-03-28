@@ -27,6 +27,12 @@ Import Custom Styling
   --button--padding: 0.75rem 2rem;
 }
 
+/* GPAP typography style overides */
+
+h1 {
+  text-transform: uppercase;
+}
+
 h3,
 h3 a,
 h3 a:active,
@@ -63,12 +69,6 @@ h6 a:hover {
 
 .has-small-font-size {
   line-height: var(--line-height-s--font-family-tertiary);
-}
-
-/* GPAP typography style overides */
-
-h1 {
-  text-transform:uppercase;
 }
 
 /* SEE: planet4/plugins/planet4-plugin-gutenberg-blocks/assets/src/styles/blocks/core-overrides/Image.scss */
