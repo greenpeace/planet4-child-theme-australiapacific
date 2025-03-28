@@ -68,7 +68,7 @@ h6 a:hover {
 /* GPAP typography style overides */
 
 h1 {
-  text-transform:uppercase;
+  text-transform: uppercase;
 }
 
 /* SEE: planet4/plugins/planet4-plugin-gutenberg-blocks/assets/src/styles/blocks/core-overrides/Image.scss */
