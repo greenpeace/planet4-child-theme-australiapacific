@@ -65,6 +65,12 @@ h6 a:hover {
   line-height: var(--line-height-s--font-family-tertiary);
 }
 
+/* GPAP typography style overides */
+
+h1 {
+  text-transform: uppercase;
+}
+
 /* SEE: planet4/plugins/planet4-plugin-gutenberg-blocks/assets/src/styles/blocks/core-overrides/Image.scss */
 
 .wp-block-image.is-style-rounded-180 img {
@@ -429,4 +435,11 @@ a.wp-block-social-link-anchor::after {
 
 .full-excerpt .posts-list-query .wp-block-post-excerpt__excerpt {
   -webkit-line-clamp: 10 !important;
+}
+
+/* Styling for list card thumbnails */
+
+.gpap-list-card-thumbnail {
+  box-shadow: 0 1px 8px 0 rgba(0,0,0,.16);
+  padding:1rem;
 }
