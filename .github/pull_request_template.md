@@ -20,6 +20,8 @@ Reviewer checklist:
 - [ ] 📝 Documentation was needed and has been updated in Notion -> P4-Planet-4-Technical-Documentation   
 
 Contributor checklist:
+- [ ] 🎨 I have **not** _directly_ edited the `.css` source styles (edit the `.scss` source files, then run `npm run build-theme-css` if you need to edit styles!)
 - [ ] Reference a GitHub issue or Notion card in the description 💯
 - [ ] Select 1-2 Reviewers
 - [x] Feel good about yourself, you're doing great! 🥳
+
