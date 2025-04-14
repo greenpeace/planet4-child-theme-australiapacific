@@ -5,8 +5,8 @@
     <!-- Custom Post Types -->
     {% if ( post.page_types.0.slug == 'news' )%}
         {% include 'single-news.twig' %}
-    {% elseif ( post.page_types.0.slug == 'team' )%}
-        {% include 'single-team.twig' %}
+    {% elseif ( post.page_types.0.slug == 'team-leadership' )%}
+        {% include 'single-team-leadership.twig' %}
     {% elseif ( post.page_types.0.slug == 'research-and-reports' )%}
         {% include 'single-report.twig' %}
     {% elseif ( post.page_types.0.slug == 'green-guardian-article' )%}
