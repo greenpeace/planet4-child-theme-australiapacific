@@ -444,3 +444,9 @@ a.wp-block-social-link-anchor::after {
 .full-excerpt .posts-list-query .wp-block-post-excerpt__excerpt {
   -webkit-line-clamp: 10 !important;
 }
+
+/* Sets the cookies block above Optimonk sticky footers which have a z-index: 2147483646  */
+
+.cookie-notice {
+z-index: 3000000000;
+}
