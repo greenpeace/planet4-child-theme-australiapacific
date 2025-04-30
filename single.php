@@ -138,7 +138,7 @@ Context::set_p4_blocks_datalayer($context, $post);
  * Add `featured_action`, `featured_action_image` and `featured_action_url` to the context.
  * @param $context The context variable to add the featured action info to.
  */
-function set_featured_action(&$context)
+function set_featured_action(&$context, &$post)
 {
     // Get the categories associated with the current post
     $categories = get_the_category($post->ID);
@@ -173,7 +173,7 @@ if (post_password_required($post->ID)) {
     do_action('enqueue_google_tag_manager_script', $context);
     Timber::render('single-password.twig', $context);
 } else {
-    set_featured_action($context);
+    set_featured_action($context, $post);
     do_action('enqueue_google_tag_manager_script', $context);
     Timber::render(
         [ 'single-' . $post->ID . '.twig', 'single-' . $post->post_type . '.twig', 'single.twig' ],
