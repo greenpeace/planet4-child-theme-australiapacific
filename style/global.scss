@@ -1,5 +1,3 @@
-@use "../../planet4-master-theme/assets/src/scss/base/_variables.scss" as *;
-
 :root {
   --font-family-secondary: "Work Sans";
   --font-family-tertiary: "Work Sans";
@@ -74,7 +72,7 @@ nav * {
   text-transform: uppercase;
 }
 
-@media (min-width: $medium-width) {
+@media (min-width: 768px) {
   .footer-cta {
     margin-bottom: -100px !important;
     padding-bottom: 180px !important;
@@ -83,7 +81,7 @@ nav * {
 
 header .site-logo {
   // This stuff ensures that the nav logo is aligned with the footer logo
-  @media (min-width: $large-width) {
+  @media (min-width: 992px) {
     // Basically the footer logo is within a container with a max width
     // and a margin: auto, plus 12px of padding. So the below calculation
     // re-creates that spacing as a left-margin
@@ -91,15 +89,15 @@ header .site-logo {
     margin-left: calc(((100vw - var(--mw)) / 2) + 12px);
   }
 
-  @media (max-width: $extra-extra-large-width) {
+  @media (max-width: 1600px) {
     --mw: 1140px;
   }
 
-  @media (min-width: $extra-extra-large-width) {
+  @media (min-width: 1600px) {
     --mw: 1600px;
   }
 
-  @media (max-width: $extra-large-width) {
+  @media (max-width: 1200px) {
     --mw: 960px;
   }
 }
