@@ -76,8 +76,11 @@ nav * {
 
 @media (min-width: $medium-width) {
   .footer-cta {
-    margin-bottom: -170px !important;
+    margin-bottom: -100px !important;
     padding-bottom: 180px !important;
+  }
+  .bottom-navigation{
+    margin-top: -116px;
   }
 }
 
