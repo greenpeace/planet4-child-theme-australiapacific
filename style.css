@@ -103,8 +103,12 @@ nav * {
 
 @media (min-width: 768px) {
   .footer-cta {
-    margin-bottom: -170px !important;
+    margin-bottom: -100px !important;
     padding-bottom: 180px !important;
+  }
+
+  .bottom-navigation{
+    margin-top: -116px;
   }
 }
 
@@ -276,6 +280,7 @@ body.scrolled.home .site-logo img {
   #footer {
     background-image: url(img/footer-bg.svg);
     background-color: transparent;
+    margin-top: -5rem;
   }
 }
 
@@ -459,6 +464,6 @@ a.wp-block-social-link-anchor::after {
 }
 
 @media (min-width: 992px) and (max-width: 1999px) {
-  margin-bottom: -170px !important;
+  margin-bottom: -100px !important;
   padding-bottom: 180px !important;
 }
