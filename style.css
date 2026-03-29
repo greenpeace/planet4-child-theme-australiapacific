@@ -30,8 +30,7 @@ Import Custom Styling
 /* News detail pages: revert to Source Serif Pro body font as per brand */
 
 .single-post {
-  --font-family-secondary: "SourceSerifPro";
-  --font-family-tertiary: "SourceSans3";
+  --body--font-family: "SourceSerifPro";
 }
 
 /* GPAP typography style overides */
@@ -275,7 +274,6 @@ body.scrolled.home .site-logo img {
   #footer {
     background-image: url(img/footer-bg.svg);
     background-color: transparent;
-    margin-top: -5rem;
   }
 }
 
