@@ -27,6 +27,13 @@ Import Custom Styling
   --button--padding: 0.75rem 2rem;
 }
 
+/* News detail pages: revert to Source Serif Pro body font as per brand */
+
+.single-post {
+  --font-family-secondary: "SourceSerifPro";
+  --font-family-tertiary: "SourceSans3";
+}
+
 /* GPAP typography style overides */
 
 h1 {

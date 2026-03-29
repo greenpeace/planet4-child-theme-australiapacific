@@ -22,7 +22,7 @@ $context = Timber::get_context();
  *
  * @var Post $post
  */
-$post = Timber::query_post(false, Post::class); // phpcs:ignore WordPress.WP.GlobalVariablesOverride.Prohibited
+$post = Timber::query_post(false, [Post::class]); // phpcs:ignore WordPress.WP.GlobalVariablesOverride.Prohibited
 $context['post'] = $post;
 
 // Set Navigation Issues links.
