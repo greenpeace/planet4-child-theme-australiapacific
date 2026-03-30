@@ -10,9 +10,8 @@
 }
 
 /* News detail pages: revert to Source Serif Pro body font as per brand */
-.single-post {
-  --font-family-secondary: "SourceSerifPro";
-  --font-family-tertiary: "SourceSans3";
+.single-post{
+  --body--font-family: "SourceSerifPro";
 }
 
 /* GPAP typography style overides */
