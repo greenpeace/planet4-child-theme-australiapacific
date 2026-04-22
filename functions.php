@@ -5,6 +5,8 @@
  * TODO: Document each function and action within this code.
  */
 
+require_once __DIR__ . '/inc/related-posts-filters.php';
+
 add_action('wp_enqueue_scripts', 'enqueue_child_styles', 99);
 
 function enqueue_child_styles() {
