@@ -1,0 +1,23 @@
+/* Admin-only: normalize heading sizing inside the metabox. */
+.ap-related-posts-filters-metabox__heading {
+  margin: 0;
+  line-height: 1.2;
+}
+
+.ap-related-posts-filters-metabox__heading strong {
+  font-size: 13px;
+  line-height: 1.2;
+}
+
+.ap-related-posts-filters-metabox__description{
+  line-height: 1.2;
+}
+
+.ap-related-posts-filters-metabox__divider {
+  margin: 14px 0;
+}
+
+.ap-related-posts-filters-metabox .ap-related-posts-checkboxes {
+  columns: 2;
+  max-width: 60em;
+}
