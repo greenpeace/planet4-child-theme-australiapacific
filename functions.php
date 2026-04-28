@@ -58,7 +58,6 @@ function p4_child_theme_gpap_add_allowed_blocks( $allowed_block_types, $context 
         'core/post-modified-date',
         'core/post-categories',
         'core/post-tags',
-        'core/footnotes',
     ];
     return array_unique(array_merge($allowed, $extra));
 }
