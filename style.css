@@ -77,16 +77,6 @@ h6 a:hover {
   line-height: var(--line-height-s--font-family-tertiary);
 }
 
-/* SEE: planet4/plugins/planet4-plugin-gutenberg-blocks/assets/src/styles/blocks/core-overrides/Image.scss */
-
-.wp-block-image.is-style-rounded-180 img {
-  max-width: 180px;
-}
-
-.wp-block-image.is-style-rounded-90 img {
-  max-width: 90px;
-}
-
 .large-excerpt, .large-excerpt * {
   -webkit-line-clamp: 10 !important;
 }
@@ -165,6 +155,48 @@ mark[style="background-color:rgba(0, 0, 0, 0)"] {
   -webkit-box-shadow: 0 1px 8px 0 rgba(0, 0, 0, 0.16);
           box-shadow: 0 1px 8px 0 rgba(0, 0, 0, 0.16);
   padding: 1rem;
+}
+
+.carousel-caption h2 {
+  text-transform: uppercase;
+}
+
+.block {
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+.wp-element-caption {
+  position: relative;
+  padding-left: 27px;
+  text-align: left !important;
+  font-weight: bold;
+}
+
+.wp-element-caption:before {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 0;
+  width: 4px;
+  height: 13px;
+  background: #000;
+}
+
+blockquote,
+blockquote > p {
+  max-width: 100% !important;
+}
+
+/* Social Block Styles */
+
+a.wp-block-social-link-anchor::after {
+  display: none;
+}
+
+.wp-block-social-links.is-style-logos-only .wp-social-link svg {
+  height: 1.7em;
+  width: 1.7em;
 }
 
 .top-navigation {
@@ -385,73 +417,4 @@ body.scrolled.home .site-logo img {
 
 #comments {
   margin-top: 50px;
-}
-
-/** This file brings over the adhoc styles from the dev site */
-
-.carousel-caption h2 {
-  text-transform: uppercase;
-}
-
-.block {
-  margin-bottom: 0;
-  margin-top: 0;
-}
-
-#footer.footer {
-  margin-top: 0px !important;
-}
-
-.wp-element-caption {
-  position: relative;
-  padding-left: 27px;
-  text-align: left !important;
-  font-weight: bold;
-}
-
-.wp-element-caption:before {
-  content: "";
-  position: absolute;
-  top: 2px;
-  left: 0;
-}
-
-.wp-element-caption:before {
-  width: 4px;
-  height: 13px;
-  background: #000;
-}
-
-blockquote,
-blockquote > p {
-  max-width: 100% !important;
-}
-
-/* Social Block Styles */
-
-a.wp-block-social-link-anchor::after {
-  display: none;
-}
-
-.wp-block-social-links.is-style-logos-only .wp-social-link svg {
-  height: 1.7em;
-  width: 1.7em;
-}
-
-/* New Styles */
-
-.column-padding {
-  padding: 20px;
-}
-
-/* Featured Images in article blocks */
-
-.featured-image-rounded-180 img {
-  border-radius: 50%;
-  width: 180px;
-  height: 180px;
-}
-
-.full-excerpt .posts-list-query .wp-block-post-excerpt__excerpt {
-  -webkit-line-clamp: 10 !important;
 }
