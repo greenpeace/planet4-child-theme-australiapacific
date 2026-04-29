@@ -23,7 +23,8 @@
   "main": "style.scss",
   "scripts": {
     "build-theme-css": "postcss -o style.css style/style.scss",
-    "build": "concurrently -c \"cyan,blue\" --names \"theme, blocks, css\" \"npm run build-theme-css\"",
+    "build-theme-css-min": "postcss --env production -o style.min.css style/style.scss",
+    "build": "concurrently -c \"cyan,blue\" --names \"theme, blocks, css\" \"npm run build-theme-css && npm run build-theme-css-min\"",
     "start": "nodemon -d scss -e scss -x \"npm run build\"",
     "compile:css": "postcss style/style.scss -o style.css",
     "compile:rtl": "rtlcss style.css style-rtl.css",
@@ -54,6 +55,7 @@
   ],
   "devDependencies": {
     "@csstools/postcss-sass": "^5.1.1",
+    "cssnano": "^7.1.7",
     "postcss": "^8.4.35"
   }
 }

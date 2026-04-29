@@ -11,18 +11,15 @@
  */
 
 use P4\MasterTheme\Context;
-use P4\MasterTheme\Post;
+use P4\MasterTheme\Settings\CloudflareTurnstile;
 use P4\MasterTheme\Settings\CommentsGdpr;
 use Timber\Timber;
 
+global $post;
+
 // Initializing variables.
-$context = Timber::get_context();
-/**
- * P4 Post Object
- *
- * @var Post $post
- */
-$post = Timber::query_post(false, [Post::class]); // phpcs:ignore WordPress.WP.GlobalVariablesOverride.Prohibited
+$context = Timber::context();
+$post = Timber::get_post($post->ID); // phpcs:ignore WordPress.WP.GlobalVariablesOverride.Prohibited
 $context['post'] = $post;
 
 // Set Navigation Issues links.
@@ -46,6 +43,8 @@ $context['social_accounts'] = $post->get_social_accounts($context['footer_social
 $context['page_category'] = 'Post Page';
 $context['post_tags'] = implode(', ', $post->tags());
 $context['post_categories'] = implode(', ', $post->categories());
+$context['page_date'] = explode('+', get_the_date('c', $post->ID))[0];
+$context['old_posts_archive_notice'] = $post->get_old_posts_archive_notice();
 
 Context::set_og_meta_fields($context, $post);
 Context::set_campaign_datalayer($context, $page_meta_data);
@@ -117,6 +116,8 @@ $comments_args = [
                 'I agree on providing my name, email and content so that my comment can be stored and displayed in the website.',
                 'planet4-master-theme'
             ),
+            // phpcs:ignore Generic.Files.LineLength.MaxExceeded
+            'render_turnstile' => CloudflareTurnstile::get_option() && defined('TURNSTILE_SITE_KEY') && defined('TURNSTILE_SECRET_KEY'),
         ]
     ),
     'title_reply' => __('Leave your reply', 'planet4-master-theme'),
