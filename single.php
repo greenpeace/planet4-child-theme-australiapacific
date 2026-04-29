@@ -65,27 +65,28 @@ function get_name($x): string
     return $x['name'];
 }
 
-// Build the shortcode for articles block.
+// Related posts block (same as planet4-master-theme single.php — Query Loop via p4/related-posts).
+// Category / p4-page-type overrides: child theme inc/related-posts-filters.php (CMB2 metabox).
 if ('yes' === $post->include_articles) {
-    $tag_id_array = [];
-    foreach ($post->tags() as $post_tag) {
-        $tag_id_array[] = $post_tag->id;
-    }
-    $category_id_array = [];
-    foreach ($post->terms('category') as $category) {
-        $category_id_array[] = $category->id;
-    }
+    $tax_query = ap_build_related_posts_tax_query($post->ID, $post);
 
     $block_attributes = [
-        'exclude_post_id' => $post->ID,
-        'tags' => $tag_id_array,
-        'categories' => $category_id_array,
-        'article_heading' => __('Related Articles', 'planet4-blocks'),
-        'read_more_text' => __('Load more', 'planet4-blocks'),
+        'query' => [
+            'perPage' => 3,
+            'post_type' => 'post',
+            'taxQuery' => $tax_query,
+            'exclude' => [ $post->ID ],
+        ],
+        'className' => 'posts-list p4-query-loop is-custom-layout-list',
+        'layout' => [
+            'type' => 'default',
+            'columnCount' => 3,
+        ],
+        'namespace' => 'planet4-blocks/posts-list',
     ];
 
-    $post->articles = '<!-- wp:planet4-blocks/articles '
-        . wp_json_encode($block_attributes, JSON_UNESCAPED_SLASHES)
+    $post->articles = '<!-- wp:p4/related-posts {"query_attributes" : '
+        . wp_json_encode($block_attributes)
         . ' /-->';
 }
 
