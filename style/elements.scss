@@ -24,3 +24,7 @@
 #comments{
   margin-top: 50px;
 }
+
+.wp-block-footnotes li {
+  scroll-margin-top: var(--navbar-menu-height);
+}

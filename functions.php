@@ -49,6 +49,9 @@ add_action('wp_enqueue_scripts', 'register_custom_script');
 // Allow additional Gutenberg core blocks on top of what the master theme permits.
 // Uses allowed_block_types_all (replaces deprecated allowed_block_types hook).
 function p4_child_theme_gpap_add_allowed_blocks( $allowed_block_types, $context ) {
+    if ($allowed_block_types === true) {
+        return true;
+    }
     $allowed = is_array($allowed_block_types) ? $allowed_block_types : [];
     $extra = [
         'core/post-title',
