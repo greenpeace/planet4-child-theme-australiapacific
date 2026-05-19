@@ -85,8 +85,8 @@ if ('yes' === $timber_post->include_articles) {
         'namespace' => 'planet4-blocks/posts-list',
     ];
 
-    $timber_post->articles = '<!-- wp:p4/related-posts {"query_attributes" : '
-        . wp_json_encode($block_attributes)
+    $timber_post->articles = '<!-- wp:p4/related-posts '
+        . wp_json_encode(['query_attributes' => $block_attributes])
         . ' /-->';
 }
 

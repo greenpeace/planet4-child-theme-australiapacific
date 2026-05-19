@@ -62,15 +62,15 @@ function ap_normalize_related_posts_term_ids($value): array
 }
 
 /**
- * Options for category multicheck (term ID => label). Stored as meta only; does not change post categories.
+ * Options for tag multicheck (term ID => label). Stored as meta only; does not change post tags.
  *
  * @return array<int, string>
  */
-function ap_related_posts_category_options(): array
+function ap_related_posts_tag_options(): array
 {
     $terms = get_terms(
         [
-            'taxonomy' => 'category',
+            'taxonomy' => 'post_tag',
             'hide_empty' => false,
             'orderby' => 'name',
         ]
@@ -108,23 +108,23 @@ function ap_render_related_posts_filters_metabox($post): void
 {
     wp_nonce_field('ap_save_related_posts_filters', 'ap_related_posts_filters_nonce');
 
-    $selected_cats = ap_normalize_related_posts_term_ids(
-        get_post_meta($post->ID, 'ap_related_posts_category_ids', true)
+    $selected_tags = ap_normalize_related_posts_term_ids(
+        get_post_meta($post->ID, 'ap_related_posts_tag_ids', true)
     );
-    $cat_options = ap_related_posts_category_options();
+    $tag_options = ap_related_posts_tag_options();
 
     echo '<div class="ap-related-posts-filters-metabox">';
-    echo '<p class="ap-related-posts-filters-metabox__heading"><strong>' . esc_html__('Categories', 'planet4-child-theme-australiapacific') . '</strong></p>';
+    echo '<p class="ap-related-posts-filters-metabox__heading"><strong>' . esc_html__('Tags', 'planet4-child-theme-australiapacific') . '</strong></p>';
     echo '<p class="ap-related-posts-filters-metabox__description description">';
-    esc_html_e('Leave all unchecked to use this post\'s categories.', 'planet4-child-theme-australiapacific');
+    esc_html_e('Leave all unchecked to use this post\'s tags.', 'planet4-child-theme-australiapacific');
     echo '</p>';
 
     echo '<div class="ap-related-posts-checkboxes">';
-    foreach ($cat_options as $term_id => $label) {
+    foreach ($tag_options as $term_id => $label) {
         printf(
-            '<label style="display:block;margin:4px 0;"><input type="checkbox" name="ap_related_posts_category_ids[]" value="%d" %s /> %s</label>',
+            '<label style="display:block;margin:4px 0;"><input type="checkbox" name="ap_related_posts_tag_ids[]" value="%d" %s /> %s</label>',
             (int) $term_id,
-            checked(in_array((int) $term_id, $selected_cats, true), true, false),
+            checked(in_array((int) $term_id, $selected_tags, true), true, false),
             esc_html($label)
         );
     }
@@ -161,15 +161,15 @@ function ap_save_related_posts_filters(int $post_id, $post): void
         return;
     }
 
-    $cat_ids = isset($_POST['ap_related_posts_category_ids']) && is_array($_POST['ap_related_posts_category_ids'])
-        ? array_map('intval', (array) wp_unslash($_POST['ap_related_posts_category_ids']))
+    $tag_ids = isset($_POST['ap_related_posts_tag_ids']) && is_array($_POST['ap_related_posts_tag_ids'])
+        ? array_map('intval', (array) wp_unslash($_POST['ap_related_posts_tag_ids']))
         : [];
-    $cat_ids = array_values(array_unique(array_filter($cat_ids)));
+    $tag_ids = array_values(array_unique(array_filter($tag_ids)));
 
-    if (! empty($cat_ids)) {
-        update_post_meta($post_id, 'ap_related_posts_category_ids', $cat_ids);
+    if (! empty($tag_ids)) {
+        update_post_meta($post_id, 'ap_related_posts_tag_ids', $tag_ids);
     } else {
-        delete_post_meta($post_id, 'ap_related_posts_category_ids');
+        delete_post_meta($post_id, 'ap_related_posts_tag_ids');
     }
 }
 
@@ -184,150 +184,22 @@ add_action('save_post_post', 'ap_save_related_posts_filters', 10, 2);
  */
 function ap_build_related_posts_tax_query(int $post_id, $timber_post): array
 {
-    $custom_cats = ap_normalize_related_posts_term_ids(
-        get_post_meta($post_id, 'ap_related_posts_category_ids', true)
+    $custom_tags = ap_normalize_related_posts_term_ids(
+        get_post_meta($post_id, 'ap_related_posts_tag_ids', true)
     );
 
-    if (!empty($custom_cats)) {
-        $category_id_array = $custom_cats;
+    if (!empty($custom_tags)) {
+        $tag_id_array = $custom_tags;
     } else {
-        $category_id_array = [];
-        foreach ($timber_post->terms('category') as $category) {
-            $category_id_array[] = (int) $category->id;
+        $tag_id_array = [];
+        foreach ($timber_post->terms('post_tag') as $tag) {
+            $tag_id_array[] = (int) $tag->id;
         }
     }
 
-    return ['category' => $category_id_array];
+    return ['post_tag' => $tag_id_array];
 }
 
-/**
- * Child-theme override for rendering p4/related-posts with a real WP_Query tax_query.
- * We can’t change the master theme render callback; the core Query block expects a different taxQuery format.
- *
- * @param string $block_content Rendered HTML.
- * @param array  $block Parsed block array.
- */
-function ap_override_render_related_posts_block(string $block_content, array $block): string
-{
-    if (($block['blockName'] ?? '') !== 'p4/related-posts') {
-        return $block_content;
-    }
-
-    if (!is_singular('post')) {
-        return $block_content;
-    }
-
-    $post_id = get_the_ID();
-    if (!$post_id) {
-        return $block_content;
-    }
-
-    // Category-only filtering.
-    $category_ids = ap_normalize_related_posts_term_ids(get_post_meta($post_id, 'ap_related_posts_category_ids', true));
-    if (empty($category_ids)) {
-        $category_ids = array_values(array_filter(array_map('intval', wp_get_post_terms($post_id, 'category', ['fields' => 'ids']))));
-    }
-
-    $tax_query = [ 'relation' => 'AND' ];
-    if (!empty($category_ids)) {
-        $tax_query[] = [
-            'taxonomy' => 'category',
-            'field' => 'term_id',
-            'terms' => $category_ids,
-            'operator' => 'IN',
-        ];
-    }
-    // No tag or post-type filtering.
-
-    // Build "See all posts" link consistent with master behaviour.
-    $see_all_link_group = '';
-    $news_stories_page = (int) get_option('page_for_posts');
-    if ($news_stories_page) {
-        $news_stories_url = get_permalink($news_stories_page);
-        $query_args = [];
-
-        if (!empty($category_ids)) {
-            $c = get_term_by('id', (int) $category_ids[0], 'category');
-            if ($c && !is_wp_error($c)) {
-                $query_args['category'] = $c->slug;
-            }
-        }
-
-        if (!empty($query_args)) {
-            $news_stories_url = add_query_arg($query_args, $news_stories_url);
-        }
-
-        $see_all_link_group = '<!-- wp:navigation-link {"label":"' . __('See all posts', 'planet4-master-theme') . '","url":"' . $news_stories_url . '","className":"see-all-link"} /-->';
-    }
-
-    // A proper core/query attribute structure (WP_Query style).
-    $query_block_attrs = [
-        'query' => [
-            'perPage' => 3,
-            'pages' => 0,
-            'offset' => 0,
-            'postType' => 'post',
-            'order' => 'desc',
-            'orderBy' => 'date',
-            'exclude' => [ (int) $post_id ],
-            'inherit' => false,
-        ],
-        'className' => 'posts-list p4-query-loop is-custom-layout-list',
-    ];
-
-    // Use a queryId so we can target this Query Loop instance server-side.
-    $query_id = 94001;
-    $query_block_attrs['queryId'] = $query_id;
-
-    // Store the tax_query temporarily for this request (picked up by query_loop_block_query_vars).
-    $GLOBALS['ap_related_posts_tax_query'] = [
-        'query_id' => $query_id,
-        'tax_query' => $tax_query,
-    ];
-
-    $template = file_get_contents(__DIR__ . '/related-posts-block-template.html');
-    $output = str_replace(
-        ['{{QUERY_ATTRS}}', '{{RELATED_POSTS_LABEL}}', '{{SEE_ALL_LINK}}'],
-        [wp_json_encode($query_block_attrs, JSON_UNESCAPED_SLASHES), __('Related Posts', 'planet4-master-theme'), $see_all_link_group],
-        $template
-    );
-
-    return do_blocks($output);
-}
-
-add_filter('render_block', 'ap_override_render_related_posts_block', 9, 2);
-
-/**
- * Apply our related-posts tax_query to the Query Loop block when it uses our queryId.
- * This hook is designed for Query Loop blocks (more reliable than pre_get_posts here).
- *
- * @param array         $query_vars Query vars for WP_Query.
- * @param array|WP_Block $block      Parsed block array (older WP) or WP_Block (newer WP).
- * @return array
- */
-function ap_related_posts_query_loop_block_query_vars(array $query_vars, $block): array
-{
-    if (!isset($GLOBALS['ap_related_posts_tax_query']) || !is_array($GLOBALS['ap_related_posts_tax_query'])) {
-        return $query_vars;
-    }
-
-    $data = $GLOBALS['ap_related_posts_tax_query'];
-    $query_id = (int) ($data['query_id'] ?? 0);
-
-    $block_query_id = is_array($block)
-        ? (int) ($block['attrs']['queryId'] ?? 0)
-        : (int) ($block->parsed_block['attrs']['queryId'] ?? 0);
-
-    if (!$query_id || $block_query_id !== $query_id) {
-        return $query_vars;
-    }
-
-    $tax_query = $data['tax_query'] ?? [];
-    if (is_array($tax_query) && count($tax_query) > 1) {
-        $query_vars['tax_query'] = $tax_query;
-    }
-
-    return $query_vars;
-}
-
-add_filter('query_loop_block_query_vars', 'ap_related_posts_query_loop_block_query_vars', 20, 2);
+// The p4/related-posts block rendering and taxQuery filtering is handled by the master theme’s
+// render_related_posts_block callback, which reads the taxQuery passed from single.php via
+// ap_build_related_posts_tax_query. No render_block override is needed here.
