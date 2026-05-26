@@ -22,5 +22,6 @@
     }
   },
   "require": {
+    "guzzlehttp/psr7": "^2.7"
   }
 }
