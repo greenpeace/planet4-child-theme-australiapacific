@@ -1,0 +1,10 @@
+{% include 'html-header.twig' %}
+
+<body class="{{ body_class }} {{ custom_body_classes|default('') }}">
+    <main class="container">
+        {{ post.content|raw }}
+    </main>
+
+    {{ function('wp_footer') }}
+</body>
+</html>
