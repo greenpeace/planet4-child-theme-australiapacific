@@ -170,3 +170,7 @@ a.wp-block-social-link-anchor::after {
   height: 1.7em;
   width: 1.7em;
 }
+
+[data-render="planet4-blocks/secondary-navigation"] {
+  z-index: 98;
+}

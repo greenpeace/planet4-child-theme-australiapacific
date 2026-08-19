@@ -199,6 +199,10 @@ a.wp-block-social-link-anchor::after {
   width: 1.7em;
 }
 
+[data-render="planet4-blocks/secondary-navigation"] {
+  z-index: 98;
+}
+
 .top-navigation {
   font-family: var(--font-family-secondary), sans-serif;
   -webkit-box-align: center;
