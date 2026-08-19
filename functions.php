@@ -162,3 +162,18 @@ function gpap_maintenance_setting_field(): void {
     </p>
     <?php
 }
+
+function gpap_maintenance_purge_cache(): void {
+    global $nginx_purger;
+
+    if (class_exists(\Cloudflare\APO\WordPress\Hooks::class)) {
+        (new \Cloudflare\APO\WordPress\Hooks())->purgeCacheEverything();
+    }
+
+    if (is_object($nginx_purger) && method_exists($nginx_purger, 'purge_all')) {
+        $nginx_purger->purge_all();
+    }
+}
+
+add_action('add_option_gpap_maintenance_mode', 'gpap_maintenance_purge_cache');
+add_action('update_option_gpap_maintenance_mode', 'gpap_maintenance_purge_cache');
