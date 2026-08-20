@@ -161,9 +161,17 @@ mark[style="background-color:rgba(0, 0, 0, 0)"] {
   text-transform: uppercase;
 }
 
+.page-content > .wp-block-group,
+.page-content > .wp-block-media-text,
+.page-content > .block,
+.post-details > .wp-block-group,
 .block {
-  margin-bottom: 0;
   margin-top: 0;
+  margin-bottom: 0;
+}
+
+.page-content .block {
+  vertical-align: top;
 }
 
 .wp-element-caption {
