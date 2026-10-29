@@ -86,6 +86,8 @@ body.scrolled.minimal-page .site-logo img {
   .nav-hamburger-toggle {
     background: transparent;
     border: none;
+    line-height: 40px;
+    padding-block: 2px;
     .icon {
       fill: var(--color-text-nav_link);
     }
@@ -96,8 +98,7 @@ body.scrolled.minimal-page .site-logo img {
     }
     .nav-submenu {
       position: absolute;
-      top: 100%;
-      right: 0;
+      right: -4px;
       left: auto;
     }
   }
