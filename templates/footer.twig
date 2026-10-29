@@ -1,9 +1,14 @@
-<footer id="footer" class="site-footer marlin-footer site-footer--{{ nav_type }}">
+<footer id="footer" class="site-footer marlin-footer site-footer--{{ nav_type }} {{ minimal_page ? 'site-footer--minimal-page' }}">
     {% if nav_type != 'minimal' %}
     <div id="footer-logo" class="footer-logo">
         {% include 'footer_logo.twig' %}
     </div>
     {% endif %}
+    {% if minimal_page %}
+        <div class="content-row container d-flex justify-content-center">
+            {% include 'footer_social_media.twig' %}
+        </div>
+    {% else %}
     <div class="content-row container d-flex flex-column flex-xl-row-reverse">
         {% if nav_type != 'minimal' %}
             <nav class="footer-menu">
@@ -50,6 +55,7 @@
         {% endif %}
         {% include 'footer_info.twig' %}
     </div>
+    {% endif %}
 
     <div class="copyright">
         <div class="container d-flex flex-column flex-xl-row">

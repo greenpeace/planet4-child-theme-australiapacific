@@ -231,68 +231,105 @@ a.wp-block-social-link-anchor::after {
    2. The logo is slightly bigger to start, then goes small on scroll.
 */
 
-.home .page-content {
+.home .page-content,
+.minimal-page .page-content {
   padding-top: 0; /* scoot the hero image up under the now-transparent menu */
 }
 
-.home .top-navigation {
+.home .top-navigation,
+.minimal-page .top-navigation {
   -webkit-transition: background-color 0.5s ease;
   transition: background-color 0.5s ease;
 }
 
-.home:not(.scrolled) .top-navigation {
+.home:not(.scrolled) .top-navigation,
+.minimal-page:not(.scrolled) .top-navigation {
   -webkit-box-shadow: none;
           box-shadow: none; /* drop default shadow because it'll look odd with transparent nav menu bar */
   --color-background-navigation_bar: transparent; /* override P4 default: var(--white); */
 }
 
-.home:not(.scrolled) .top-navigation .nav-menu {
+.home:not(.scrolled) .top-navigation .nav-menu,
+.minimal-page:not(.scrolled) .top-navigation .nav-menu {
   --color-text-nav_link: var(
     --wp--preset--color--white
   ); /* override P4 default: var(--grey-900); */
 }
 
-.home:not(.scrolled) .top-navigation .nav-submenu {
+.home:not(.scrolled) .top-navigation .nav-submenu,
+.minimal-page:not(.scrolled) .top-navigation .nav-submenu {
+  --color-text-nav_link: var(--grey-900);
   --submenu-nav-link--color: var(--grey-900);
   --submenu-nav-link--hover--color: var(--submenu-nav-link--color);
 }
 
 @media (min-width: 1200px) {
-  .home:not(.scrolled) .top-navigation #search_form #search_input::-webkit-input-placeholder {
+  .home:not(.scrolled) .top-navigation #search_form #search_input::-webkit-input-placeholder, .minimal-page:not(.scrolled) .top-navigation #search_form #search_input::-webkit-input-placeholder {
     color: var(--wp--preset--color--white);
   }
-  .home:not(.scrolled) .top-navigation #search_form #search_input::-moz-placeholder {
+  .home:not(.scrolled) .top-navigation #search_form #search_input::-moz-placeholder, .minimal-page:not(.scrolled) .top-navigation #search_form #search_input::-moz-placeholder {
     color: var(--wp--preset--color--white);
   }
-  .home:not(.scrolled) .top-navigation #search_form #search_input:-ms-input-placeholder {
+  .home:not(.scrolled) .top-navigation #search_form #search_input:-ms-input-placeholder, .minimal-page:not(.scrolled) .top-navigation #search_form #search_input:-ms-input-placeholder {
     color: var(--wp--preset--color--white);
   }
-  .home:not(.scrolled) .top-navigation #search_form #search_input::-ms-input-placeholder {
+  .home:not(.scrolled) .top-navigation #search_form #search_input::-ms-input-placeholder, .minimal-page:not(.scrolled) .top-navigation #search_form #search_input::-ms-input-placeholder {
     color: var(--wp--preset--color--white);
   }
   .home:not(.scrolled) .top-navigation #search_form #search_input,
-  .home:not(.scrolled) .top-navigation #search_form #search_input::placeholder {
+  .home:not(.scrolled) .top-navigation #search_form #search_input::placeholder,
+  .minimal-page:not(.scrolled) .top-navigation #search_form #search_input,
+  .minimal-page:not(.scrolled) .top-navigation #search_form #search_input::placeholder {
     color: var(--wp--preset--color--white);
   }
 }
 
-.home:not(.scrolled) .top-navigation #search_form button .icon {
+.home:not(.scrolled) .top-navigation #search_form button .icon,
+.minimal-page:not(.scrolled) .top-navigation #search_form button .icon {
   fill: var(--wp--preset--color--white);
 }
 
-.home .site-logo img {
+.home .site-logo img,
+.minimal-page .site-logo img {
   -webkit-transition: height 0.4s;
   transition: height 0.4s;
   /* bump height to get big logo (bumped up by fraction of golden ratio) */
   height: 34.03439px;
 }
 
-body.scrolled.home .site-logo img {
+body.scrolled.home .site-logo img,
+body.scrolled.minimal-page .site-logo img {
   height: 26px; /* default P4 value */
 }
 
 .nav-search-toggle {
   --top-navigation--search-toggle--background: var(--grey-800);
+}
+
+@media (min-width: 992px) {
+  .minimal-page #search_form {
+    display: none;
+  }
+}
+
+.minimal-page .nav-hamburger-toggle {
+  background: transparent;
+  border: none;
+}
+
+.minimal-page .nav-hamburger-toggle .icon {
+  fill: var(--color-text-nav_link);
+}
+
+.minimal-page .nav-hamburger .accessible-nav-link:not(:focus) {
+  opacity: 0;
+}
+
+.minimal-page .nav-hamburger .nav-submenu {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  left: auto;
 }
 
 #footer {
@@ -396,6 +433,15 @@ body.scrolled.home .site-logo img {
 
 #footer .copyright span:not(:last-of-type):after {
   display: none !important;
+}
+
+#footer.site-footer--minimal-page {
+  padding-top: 3rem;
+}
+
+#footer.site-footer--minimal-page #footer-logo {
+  text-align: center;
+  margin-bottom: 1.5rem;
 }
 
 @media (min-width: 768px) {

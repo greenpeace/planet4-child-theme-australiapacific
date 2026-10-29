@@ -20,7 +20,8 @@
    2. The logo is slightly bigger to start, then goes small on scroll.
 */
 
-.home {
+.home,
+.minimal-page {
   .page-content {
     padding-top: 0; /* scoot the hero image up under the now-transparent menu */
   }
@@ -38,6 +39,7 @@
     }
 
     .nav-submenu {
+      --color-text-nav_link: var(--grey-900);
       --submenu-nav-link--color: var(--grey-900);
       --submenu-nav-link--hover--color: var(--submenu-nav-link--color);
     }
@@ -66,10 +68,37 @@
   }
 }
 
-body.scrolled.home .site-logo img {
+body.scrolled.home .site-logo img,
+body.scrolled.minimal-page .site-logo img {
   height: 26px; /* default P4 value */
 }
 
 .nav-search-toggle {
   --top-navigation--search-toggle--background: var(--grey-800);
+}
+
+.minimal-page {
+  @media (min-width: 992px) {
+    #search_form {
+      display: none;
+    }
+  }
+  .nav-hamburger-toggle {
+    background: transparent;
+    border: none;
+    .icon {
+      fill: var(--color-text-nav_link);
+    }
+  }
+  .nav-hamburger {
+    .accessible-nav-link:not(:focus) {
+      opacity: 0;
+    }
+    .nav-submenu {
+      position: absolute;
+      top: 100%;
+      right: 0;
+      left: auto;
+    }
+  }
 }

@@ -18,7 +18,7 @@ function ready(fn) {
 }
 
 function onHomePage() {
-  return document.body.classList.contains("home");
+  return ["home", "minimal-page"].some((name) => document.body.classList.contains(name));
 }
 
 function getYPosition() {

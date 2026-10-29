@@ -14,11 +14,24 @@ function enqueue_child_styles() {
     wp_enqueue_style('child-style', get_stylesheet_directory_uri() . '/style.min.css', [], $css_creation);
 }
 
+function gpap_is_minimal_page(): bool {
+    return is_page_template('page-templates/minimal.php');
+}
+
 function register_custom_script() {
-    if (is_front_page()) {
+    if (is_front_page() || gpap_is_minimal_page()) {
         wp_enqueue_script('update-DOM-on-scroll', get_stylesheet_directory_uri() .  '/js/update-DOM-on-scroll.js');
     }
 }
+
+add_filter('body_class', fn($classes) => gpap_is_minimal_page() ? [...$classes, 'minimal-page'] : $classes);
+
+add_filter('timber/context', function ($context) {
+    $context['minimal_page'] = gpap_is_minimal_page();
+    return $context;
+});
+
+add_filter('timber/locations', fn($paths) => $paths + ['parent' => [get_template_directory() . '/templates']]);
 
 function fix_svg() {
   echo '<style type="text/css">
