@@ -315,6 +315,8 @@ body.scrolled.minimal-page .site-logo img {
 .minimal-page .nav-hamburger-toggle {
   background: transparent;
   border: none;
+  line-height: 40px;
+  padding-block: 2px;
 }
 
 .minimal-page .nav-hamburger-toggle .icon {
@@ -327,8 +329,7 @@ body.scrolled.minimal-page .site-logo img {
 
 .minimal-page .nav-hamburger .nav-submenu {
   position: absolute;
-  top: 100%;
-  right: 0;
+  right: -4px;
   left: auto;
 }
 
@@ -436,7 +437,7 @@ body.scrolled.minimal-page .site-logo img {
 }
 
 #footer.site-footer--minimal-page {
-  padding-top: 3rem;
+  padding-top: 4.5rem;
 }
 
 #footer.site-footer--minimal-page #footer-logo {
