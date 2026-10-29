@@ -92,14 +92,20 @@ body.scrolled.minimal-page .site-logo img {
       fill: var(--color-text-nav_link);
     }
   }
+  #nav-menu > ul {
+    flex-grow: 0;
+    margin-left: auto;
+    position: relative;
+  }
   .nav-hamburger {
+    position: static;
     .accessible-nav-link:not(:focus) {
       opacity: 0;
     }
     .nav-submenu {
       position: absolute;
-      right: -4px;
-      left: auto;
+      left: 16px;
+      right: auto;
     }
   }
 }

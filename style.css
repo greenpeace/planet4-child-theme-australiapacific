@@ -323,14 +323,27 @@ body.scrolled.minimal-page .site-logo img {
   fill: var(--color-text-nav_link);
 }
 
+.minimal-page #nav-menu > ul {
+  -webkit-box-flex: 0;
+  -webkit-flex-grow: 0;
+      -ms-flex-positive: 0;
+          flex-grow: 0;
+  margin-left: auto;
+  position: relative;
+}
+
+.minimal-page .nav-hamburger {
+  position: static;
+}
+
 .minimal-page .nav-hamburger .accessible-nav-link:not(:focus) {
   opacity: 0;
 }
 
 .minimal-page .nav-hamburger .nav-submenu {
   position: absolute;
-  right: -4px;
-  left: auto;
+  left: 16px;
+  right: auto;
 }
 
 #footer {
