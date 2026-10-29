@@ -67,4 +67,11 @@
       display: none !important;
     }
   }
+  &.site-footer--minimal-page {
+    padding-top: 3rem;
+    #footer-logo {
+      text-align: center;
+      margin-bottom: 1.5rem;
+    }
+  }
 }

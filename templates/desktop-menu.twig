@@ -1,0 +1,51 @@
+{% if not minimal_page %}
+    {% include '@parent/desktop-menu.twig' %}
+{% else %}
+<div id="nav-main-desktop" class="d-none d-lg-flex">
+    <nav id="nav-menu" class="nav-menu" aria-label="{{ __( 'Primary', 'planet4-master-theme' ) }}">
+        <ul>
+            {% if donate_menu_items is not empty %}
+                {% set donate_menu = donate_menu_items|first %}
+                <li class="nav-donate {{ donate_menu.children is not empty ? 'has-children' : '' }}">
+                    <button
+                        class="btn btn-donate"
+                        onclick="window.location='{{ donate_menu_items[0].link }}';"
+                        role="link"
+                        data-ga-category="Menu Navigation"
+                        data-ga-action="Donate"
+                        data-ga-label="{{ page_category }}">
+                        {{ donate_menu.title }}
+                    </button>
+                    {% if donate_menu.children is not empty %}
+                        <button
+                            class="accessible-nav-link"
+                            tabindex="0"
+                            aria-label="{{ __( 'Open donate button dropdown menu', 'planet4-master-theme' ) }}"
+                        >
+                        </button>
+                        {% include 'navigation-submenu.twig' with { menu: donate_menu } %}
+                    {% endif %}
+                </li>
+            {% endif %}
+            <li class="nav-donate nav-hamburger has-children">
+                <button
+                    class="btn nav-hamburger-toggle"
+                    type="button"
+                    aria-label="{{ __( 'Toggle navigation menu', 'planet4-master-theme' ) }}"
+                    data-ga-category="Menu Navigation"
+                    data-ga-action="Open Menu"
+                    data-ga-label="{{ page_category }}">
+                    {{ 'menu'|svgicon }}
+                </button>
+                <button
+                    class="accessible-nav-link"
+                    tabindex="0"
+                    aria-label="{{ __( 'Open navigation link dropdown menu', 'planet4-master-theme' ) }}"
+                >
+                </button>
+                {% include 'navigation-submenu.twig' with { menu: { children: navbar_menu_items } } %}
+            </li>
+        </ul>
+    </nav>
+</div>
+{% endif %}
