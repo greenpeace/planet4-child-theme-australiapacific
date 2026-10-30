@@ -68,10 +68,46 @@
     }
   }
   &.site-footer--minimal-page {
-    padding-top: 4.5rem;
-    #footer-logo {
+    background: var(--color-background-copyright_block);
+    padding: 1.5rem 0;
+    line-height: 1.4;
+    .container {
+      gap: 1.5rem 2.5rem;
+    }
+    .footer-logo {
+      width: 160px;
+    }
+    .footer-copyright {
+      font-size: 0.875rem;
       text-align: center;
-      margin-bottom: 1.5rem;
+      .icon {
+        width: 24px;
+        height: 24px;
+        margin-right: 0.5rem;
+        vertical-align: middle;
+      }
+    }
+    .footer-social-media {
+      margin-bottom: 0;
+      @media (min-width: 992px) {
+        margin-left: auto;
+      }
+      ul {
+        margin: 0;
+        padding: 0;
+        border: none;
+        gap: 1.5rem;
+      }
+      li,
+      a {
+        display: flex;
+        margin: 0;
+      }
+      .icon {
+        width: 32px;
+        height: 32px;
+        margin: 0;
+      }
     }
   }
 }

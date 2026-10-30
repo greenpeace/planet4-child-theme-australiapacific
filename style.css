@@ -450,12 +450,61 @@ body.scrolled.minimal-page .site-logo img {
 }
 
 #footer.site-footer--minimal-page {
-  padding-top: 4.5rem;
+  background: var(--color-background-copyright_block);
+  padding: 1.5rem 0;
+  line-height: 1.4;
 }
 
-#footer.site-footer--minimal-page #footer-logo {
+#footer.site-footer--minimal-page .container {
+  gap: 1.5rem 2.5rem;
+}
+
+#footer.site-footer--minimal-page .footer-logo {
+  width: 160px;
+}
+
+#footer.site-footer--minimal-page .footer-copyright {
+  font-size: 0.875rem;
   text-align: center;
-  margin-bottom: 1.5rem;
+}
+
+#footer.site-footer--minimal-page .footer-copyright .icon {
+  width: 24px;
+  height: 24px;
+  margin-right: 0.5rem;
+  vertical-align: middle;
+}
+
+#footer.site-footer--minimal-page .footer-social-media {
+  margin-bottom: 0;
+}
+
+@media (min-width: 992px) {
+  #footer.site-footer--minimal-page .footer-social-media {
+    margin-left: auto;
+  }
+}
+
+#footer.site-footer--minimal-page .footer-social-media ul {
+  margin: 0;
+  padding: 0;
+  border: none;
+  gap: 1.5rem;
+}
+
+#footer.site-footer--minimal-page .footer-social-media li,
+#footer.site-footer--minimal-page .footer-social-media a {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 0;
+}
+
+#footer.site-footer--minimal-page .footer-social-media .icon {
+  width: 32px;
+  height: 32px;
+  margin: 0;
 }
 
 @media (min-width: 768px) {
