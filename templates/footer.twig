@@ -1,14 +1,27 @@
-<footer id="footer" class="site-footer marlin-footer site-footer--{{ nav_type }} {{ minimal_page ? 'site-footer--minimal-page' }}">
+{% if minimal_page %}
+<footer id="footer" class="site-footer marlin-footer site-footer--minimal-page">
+    <div class="container d-flex flex-column flex-lg-row align-items-center">
+        <img
+            class="footer-logo"
+            src="{{ fn('get_stylesheet_directory_uri') }}/img/logo-white.svg"
+            alt="Greenpeace"
+            data-ga-category="Footer"
+            data-ga-action="Greenpeace Logo"
+            data-ga-label="{{ page_category }}">
+        <span class="footer-copyright" role="text">
+            {{ 'creative-commons'|svgicon }}
+            {{ copyright_text_line2|e('wp_kses_post')|raw }} {{"now"|date('Y')}}
+        </span>
+        {% include 'footer_social_media.twig' %}
+    </div>
+</footer>
+{% else %}
+<footer id="footer" class="site-footer marlin-footer site-footer--{{ nav_type }}">
     {% if nav_type != 'minimal' %}
     <div id="footer-logo" class="footer-logo">
         {% include 'footer_logo.twig' %}
     </div>
     {% endif %}
-    {% if minimal_page %}
-        <div class="content-row container d-flex justify-content-center">
-            {% include 'footer_social_media.twig' %}
-        </div>
-    {% else %}
     <div class="content-row container d-flex flex-column flex-xl-row-reverse">
         {% if nav_type != 'minimal' %}
             <nav class="footer-menu">
@@ -55,7 +68,6 @@
         {% endif %}
         {% include 'footer_info.twig' %}
     </div>
-    {% endif %}
 
     <div class="copyright">
         <div class="container d-flex flex-column flex-xl-row">
@@ -69,3 +81,4 @@
         </div>
     </div>
 </footer>
+{% endif %}
