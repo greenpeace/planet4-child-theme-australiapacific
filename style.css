@@ -336,6 +336,12 @@ body.scrolled.minimal-page .site-logo img {
   position: static;
 }
 
+@media (max-width: 1199px) {
+  .minimal-page .nav-hamburger {
+    position: relative;
+  }
+}
+
 .minimal-page .nav-hamburger .accessible-nav-link:not(:focus) {
   opacity: 0;
 }
@@ -344,6 +350,13 @@ body.scrolled.minimal-page .site-logo img {
   position: absolute;
   left: 16px;
   right: auto;
+}
+
+@media (max-width: 1199px) {
+  .minimal-page .nav-hamburger .nav-submenu {
+    left: auto;
+    right: 0;
+  }
 }
 
 #footer {

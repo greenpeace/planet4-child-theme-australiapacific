@@ -99,6 +99,9 @@ body.scrolled.minimal-page .site-logo img {
   }
   .nav-hamburger {
     position: static;
+    @media (max-width: 1199px) {
+      position: relative;
+    }
     .accessible-nav-link:not(:focus) {
       opacity: 0;
     }
@@ -106,6 +109,10 @@ body.scrolled.minimal-page .site-logo img {
       position: absolute;
       left: 16px;
       right: auto;
+      @media (max-width: 1199px) {
+        left: auto;
+        right: 0;
+      }
     }
   }
 }
