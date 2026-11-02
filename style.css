@@ -541,6 +541,20 @@ body.scrolled.minimal-page .site-logo img {
   padding: 0;
 }
 
+@media (min-width: 600px) {
+  .wp-block-media-text:not(.has-media-on-the-right) .wp-block-media-text__content {
+    -webkit-padding-start: 48px;
+       -moz-padding-start: 48px;
+            padding-inline-start: 48px;
+  }
+
+  .wp-block-media-text.has-media-on-the-right .wp-block-media-text__content {
+    -webkit-padding-end: 48px;
+       -moz-padding-end: 48px;
+            padding-inline-end: 48px;
+  }
+}
+
 #comments {
   margin-top: 50px;
 }
