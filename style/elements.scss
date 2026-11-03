@@ -19,6 +19,14 @@
   .wp-block-media-text__content{
     padding: 0;
   }
+  @media (min-width: 600px) {
+    &:not(.has-media-on-the-right) .wp-block-media-text__content {
+      padding-inline-start: 48px;
+    }
+    &.has-media-on-the-right .wp-block-media-text__content {
+      padding-inline-end: 48px;
+    }
+  }
 }
 
 #comments{
