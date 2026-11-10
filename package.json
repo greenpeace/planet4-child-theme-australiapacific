@@ -23,7 +23,7 @@
   "main": "style.scss",
   "scripts": {
     "build-theme-css": "postcss -o style.css style/style.scss",
-    "build-theme-css-min": "postcss --env production -o style.min.css style/style.scss",
+    "build-theme-css-min": "postcss --env production -o style.min.css style/style.scss && postcss \"style/page-templates/*.scss\" --env production --dir . --ext .min.css",
     "build": "concurrently -c \"cyan,blue\" --names \"theme, blocks, css\" \"npm run build-theme-css && npm run build-theme-css-min\"",
     "start": "nodemon -d scss -e scss -x \"npm run build\"",
     "compile:css": "postcss style/style.scss -o style.css",
