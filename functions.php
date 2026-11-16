@@ -12,10 +12,21 @@ add_action('wp_enqueue_scripts', 'enqueue_child_styles', 99);
 function enqueue_child_styles() {
     $css_creation = filectime(get_stylesheet_directory() . '/style.min.css');
     wp_enqueue_style('child-style', get_stylesheet_directory_uri() . '/style.min.css', [], $css_creation);
+
+    if (is_page_template('page-templates/scott-reef.php')) {
+        $scott_reef_css = filectime(get_stylesheet_directory() . '/scott-reef.min.css');
+        wp_enqueue_style('scott-reef-style', get_stylesheet_directory_uri() . '/scott-reef.min.css', ['child-style'], $scott_reef_css);
+
+        wp_enqueue_style('splide', get_stylesheet_directory_uri() . '/js/lib/splide/splide-core.min.css', [], '4.1.4');
+        wp_enqueue_script('splide', get_stylesheet_directory_uri() . '/js/lib/splide/splide.min.js', [], '4.1.4', true);
+
+        $scott_reef_js = filectime(get_stylesheet_directory() . '/js/scott-reef.js');
+        wp_enqueue_script('scott-reef', get_stylesheet_directory_uri() . '/js/scott-reef.js', ['splide'], $scott_reef_js, true);
+    }
 }
 
 function gpap_is_minimal_page(): bool {
-    return is_page_template('page-templates/minimal.php');
+    return is_page_template(['page-templates/minimal.php', 'page-templates/scott-reef.php']);
 }
 
 function register_custom_script() {
