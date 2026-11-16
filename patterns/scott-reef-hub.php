@@ -415,26 +415,10 @@ $map = get_stylesheet_directory_uri() . '/img/scott-reef-map.svg';
 <h3 class="wp-block-heading sr-h3" id="join-the-movement">Join the movement.</h3>
 <!-- /wp:heading -->
 
-<!-- wp:columns {"className":"sr-social is-style-mobile-carousel"} -->
-<div class="wp-block-columns sr-social is-style-mobile-carousel"><!-- wp:column -->
-<div class="wp-block-column"><!-- wp:html -->
-<blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/Dc0MS2_zCWL/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14"><a href="https://www.instagram.com/reel/Dc0MS2_zCWL/">View this post on Instagram</a></blockquote>
-<!-- /wp:html --></div>
-<!-- /wp:column -->
-
-<!-- wp:column -->
-<div class="wp-block-column"><!-- wp:html -->
-<blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DdIGFyyzef-/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14"><a href="https://www.instagram.com/reel/DdIGFyyzef-/">View this post on Instagram</a></blockquote>
-<!-- /wp:html --></div>
-<!-- /wp:column -->
-
-<!-- wp:column -->
-<div class="wp-block-column"><!-- wp:html -->
-<blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DdVE826zW3H/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14"><a href="https://www.instagram.com/reel/DdVE826zW3H/">View this post on Instagram</a></blockquote>
-<script async src="//www.instagram.com/embed.js"></script>
-<!-- /wp:html --></div>
-<!-- /wp:column --></div>
-<!-- /wp:columns -->
+<!-- wp:html -->
+<div class="sr-social"><script src="https://elfsightcdn.com/platform.js" async></script>
+<div class="elfsight-app-34e49a9d-60bd-437b-af3e-b83f3fe67681" data-elfsight-app-lazy></div></div>
+<!-- /wp:html -->
 
 <!-- wp:paragraph {"className":"sr-link"} -->
 <p class="sr-link"><a href="#">Share the campaign ↗</a></p>
