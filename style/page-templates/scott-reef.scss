@@ -455,9 +455,15 @@ body.page-template-scott-reef {
   }
 
   .sr-carousel-wrap {
-    margin-inline-end: calc(50% - 50vw);
+    margin-inline: calc(50% - 50vw);
+    padding-inline: calc(50vw - 50%);
     margin-bottom: 30px;
+    overflow: hidden;
     cursor: grab;
+
+    .splide__track {
+      overflow: visible;
+    }
 
     &.is-dragging {
       cursor: grabbing;
