@@ -67,11 +67,10 @@ const mountCarousel = list => {
   [...list.children].forEach(slide => slide.classList.add('splide__slide'));
 
   new window.Splide(root, {
-    arrows: false,
+    type: 'loop',
     pagination: false,
     gap: '20px',
     fixedWidth: '500px',
-    trimSpace: 'move',
     breakpoints: {
       600: {fixedWidth: '85vw'},
     },

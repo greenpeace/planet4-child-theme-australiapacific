@@ -455,14 +455,41 @@ body.page-template-scott-reef {
   }
 
   .sr-carousel-wrap {
-    margin-inline: calc(50% - 50vw);
-    padding-inline: calc(50vw - 50%);
+    position: relative;
     margin-bottom: 30px;
-    overflow: hidden;
     cursor: grab;
 
-    .splide__track {
-      overflow: visible;
+    .splide__arrow {
+      position: absolute;
+      top: 50%;
+      z-index: 2;
+      width: 48px;
+      height: 48px;
+      padding: 0;
+      border: 0;
+      border-radius: 50%;
+      background: var(--white) url("/wp-content/themes/planet4-master-theme/images/chevron.svg") center / 28px 18px no-repeat;
+      box-shadow: 0 1px 8px rgb(0 0 0 / 20%);
+      cursor: pointer;
+      transform: translateY(-50%);
+
+      &:hover,
+      &:focus-visible {
+        background-color: var(--grey-200);
+      }
+
+      svg {
+        display: none;
+      }
+    }
+
+    .splide__arrow--prev {
+      left: max(-72px, calc((100% - 100vw) / 2 + 8px));
+      transform: translateY(-50%) rotate(180deg);
+    }
+
+    .splide__arrow--next {
+      right: max(-72px, calc((100% - 100vw) / 2 + 8px));
     }
 
     &.is-dragging {
