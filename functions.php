@@ -25,6 +25,21 @@ function enqueue_child_styles() {
     }
 }
 
+function gpap_is_scott_reef_editor(): bool {
+    return is_admin()
+        && get_current_screen()?->is_block_editor()
+        && get_page_template_slug(get_post()) === 'page-templates/scott-reef.php';
+}
+
+add_action('enqueue_block_assets', function () {
+    if (gpap_is_scott_reef_editor()) {
+        $scott_reef_css = filectime(get_stylesheet_directory() . '/scott-reef.min.css');
+        wp_enqueue_style('scott-reef-style', get_stylesheet_directory_uri() . '/scott-reef.min.css', [], $scott_reef_css);
+    }
+});
+
+add_filter('admin_body_class', fn($classes) => gpap_is_scott_reef_editor() ? "$classes page-template-scott-reef" : $classes);
+
 function gpap_is_minimal_page(): bool {
     return is_page_template(['page-templates/minimal.php', 'page-templates/scott-reef.php']);
 }

@@ -21,7 +21,7 @@ body.page-template-scott-reef {
     max-width: calc(1240px + 24px);
   }
 
-  .page-content {
+  :is(.page-content, .editor-styles-wrapper) {
     font-family: var(--sr-body);
     font-size: 18px;
     line-height: 1.45;
@@ -56,7 +56,7 @@ body.page-template-scott-reef {
     background-image: none;
   }
 
-  .page-content [class*="sr-"] a:is(:hover, :focus),
+  :is(.page-content, .editor-styles-wrapper) [class*="sr-"] a:is(:hover, :focus),
   .page-content .sr-nav-email:is(:hover, :focus) {
     text-decoration: none;
     border-bottom-color: transparent !important;
@@ -118,7 +118,7 @@ body.page-template-scott-reef {
     }
   }
 
-  .page-content {
+  :is(.page-content, .editor-styles-wrapper) {
     .sr-eyebrow {
       font: 700 14px/1.5 var(--sr-body);
       text-transform: uppercase;
@@ -367,7 +367,7 @@ body.page-template-scott-reef {
 
     .sr-meta,
     .sr-card__heading,
-    .sr-text-button a {
+    .sr-text-button {
       color: var(--sr-blue);
     }
 
@@ -692,6 +692,36 @@ body.page-template-scott-reef {
 
     .sr-signup {
       padding: 32px 16px;
+    }
+  }
+}
+
+body.page-template-scott-reef .editor-styles-wrapper {
+  background: var(--sr-cream);
+
+  .is-root-container > .wp-block {
+    max-width: 1240px;
+  }
+
+  .is-root-container.is-root-container [class*="sr-"] p > a {
+    border-bottom: 0;
+    background-image: none;
+    color: inherit;
+  }
+
+  .is-root-container > .sr-band {
+    max-width: none;
+    margin-inline: 0;
+    padding-inline: max(24px, calc((100% - 1240px) / 2));
+  }
+
+  .sr-carousel {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+
+    > * {
+      flex: 0 0 500px;
     }
   }
 }
