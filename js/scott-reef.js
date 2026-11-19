@@ -105,6 +105,40 @@ const wrapArrows = link => {
   });
 };
 
+const mountHeroVideo = wrap => {
+  const id = wrap.dataset.vimeo;
+
+  if (!/^\d+$/.test(id) || matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    return;
+  }
+
+  const origin = 'https://player.vimeo.com';
+  const frame = document.createElement('iframe');
+  frame.src = `${origin}/video/${id}?background=1&autoplay=1&loop=1&muted=1&dnt=1`;
+  frame.allow = 'autoplay; fullscreen; picture-in-picture';
+  frame.tabIndex = -1;
+  frame.setAttribute('aria-hidden', 'true');
+
+  window.addEventListener('message', event => {
+    if (event.source !== frame.contentWindow) {
+      return;
+    }
+
+    const data = typeof event.data === 'string' ? JSON.parse(event.data) : event.data;
+
+    if (data.event === 'ready') {
+      frame.contentWindow.postMessage(JSON.stringify({method: 'addEventListener', value: 'playing'}), origin);
+    }
+
+    if (data.event === 'playing') {
+      wrap.classList.add('is-playing');
+    }
+  });
+
+  wrap.append(frame);
+};
+
+document.querySelectorAll('.sr-hero__video').forEach(mountHeroVideo);
 document.querySelectorAll('.sr-carousel').forEach(mountCarousel);
 document.querySelectorAll('.page-content a').forEach(wrapArrows);
 

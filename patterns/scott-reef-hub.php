@@ -15,6 +15,10 @@ $map = get_stylesheet_directory_uri() . '/img/scott-reef-map.svg';
 <figure class="wp-block-image size-full sr-bg"><img src="<?= $img ?>/2026/08/d68fe6c4-gp0su89f1.jpg" alt=""/></figure>
 <!-- /wp:image -->
 
+<!-- wp:html -->
+<div class="sr-hero__video" data-vimeo="1071298583"></div>
+<!-- /wp:html -->
+
 <!-- wp:columns {"className":"sr-hero__cols"} -->
 <div class="wp-block-columns sr-hero__cols"><!-- wp:column {"width":"50%"} -->
 <div class="wp-block-column" style="flex-basis:50%"><!-- wp:heading {"level":1,"className":"sr-h1"} -->
@@ -131,9 +135,8 @@ $map = get_stylesheet_directory_uri() . '/img/scott-reef-map.svg';
 <h3 class="wp-block-heading sr-h3">Every voice matters.<br>Help save Scott Reef.</h3>
 <!-- /wp:heading -->
 
-<!-- wp:columns {"className":"sr-voices is-style-mobile-carousel"} -->
-<div class="wp-block-columns sr-voices is-style-mobile-carousel"><!-- wp:column -->
-<div class="wp-block-column"><!-- wp:group {"className":"sr-voice"} -->
+<!-- wp:group {"className":"sr-voices"} -->
+<div class="wp-block-group sr-voices"><!-- wp:group {"className":"sr-voice"} -->
 <div class="wp-block-group sr-voice"><!-- wp:image {"sizeSlug":"full","linkDestination":"none","className":"sr-bg"} -->
 <figure class="wp-block-image size-full sr-bg"><img src="<?= $img ?>/2026/09/c575c921-nushfreedman_edited.jpg" alt=""/></figure>
 <!-- /wp:image -->
@@ -145,11 +148,9 @@ $map = get_stylesheet_directory_uri() . '/img/scott-reef-map.svg';
 <!-- wp:paragraph {"className":"sr-voice__name"} -->
 <p class="sr-voice__name">Nush Freedman</p>
 <!-- /wp:paragraph --></div>
-<!-- /wp:group --></div>
-<!-- /wp:column -->
+<!-- /wp:group -->
 
-<!-- wp:column -->
-<div class="wp-block-column"><!-- wp:group {"className":"sr-voice"} -->
+<!-- wp:group {"className":"sr-voice"} -->
 <div class="wp-block-group sr-voice"><!-- wp:image {"sizeSlug":"full","linkDestination":"none","className":"sr-bg"} -->
 <figure class="wp-block-image size-full sr-bg"><img src="<?= $img ?>/2026/09/b73993e6-jacinta.png" alt=""/></figure>
 <!-- /wp:image -->
@@ -161,11 +162,9 @@ $map = get_stylesheet_directory_uri() . '/img/scott-reef-map.svg';
 <!-- wp:paragraph {"className":"sr-voice__name"} -->
 <p class="sr-voice__name">Jacinta Shackleton</p>
 <!-- /wp:paragraph --></div>
-<!-- /wp:group --></div>
-<!-- /wp:column -->
+<!-- /wp:group -->
 
-<!-- wp:column -->
-<div class="wp-block-column"><!-- wp:group {"className":"sr-voice"} -->
+<!-- wp:group {"className":"sr-voice"} -->
 <div class="wp-block-group sr-voice"><!-- wp:image {"sizeSlug":"full","linkDestination":"none","className":"sr-bg"} -->
 <figure class="wp-block-image size-full sr-bg"><img src="<?= $img ?>/2026/09/e21f6581-jake-wilton.png" alt=""/></figure>
 <!-- /wp:image -->
@@ -178,8 +177,7 @@ $map = get_stylesheet_directory_uri() . '/img/scott-reef-map.svg';
 <p class="sr-voice__name">Jake Wilton</p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group --></div>
-<!-- /wp:column --></div>
-<!-- /wp:columns -->
+<!-- /wp:group -->
 
 <!-- wp:group {"className":"sr-link-row"} -->
 <div class="wp-block-group sr-link-row"><!-- wp:paragraph {"className":"sr-link"} -->
@@ -199,8 +197,8 @@ $map = get_stylesheet_directory_uri() . '/img/scott-reef-map.svg';
 
 <!-- wp:columns {"className":"sr-intro-cols"} -->
 <div class="wp-block-columns sr-intro-cols"><!-- wp:column {"width":"46%"} -->
-<div class="wp-block-column" style="flex-basis:46%"><!-- wp:heading {"level":3,"className":"sr-h3"} -->
-<h3 class="wp-block-heading sr-h3">Scott Reef is an extraordinary place. One worth protecting.</h3>
+<div class="wp-block-column" style="flex-basis:46%"><!-- wp:heading {"level":3,"className":"sr-h3 sr-h3--feature"} -->
+<h3 class="wp-block-heading sr-h3 sr-h3--feature">Scott Reef is an extraordinary place. One worth protecting.</h3>
 <!-- /wp:heading --></div>
 <!-- /wp:column -->
 
@@ -426,7 +424,9 @@ $map = get_stylesheet_directory_uri() . '/img/scott-reef-map.svg';
 <!-- /wp:group -->
 
 <!-- wp:group {"className":"sr-section sr-band sr-white"} -->
-<div class="wp-block-group sr-section sr-band sr-white"><!-- wp:heading {"className":"sr-eyebrow"} -->
+<div class="wp-block-group sr-section sr-band sr-white"><!-- wp:columns {"className":"sr-news"} -->
+<div class="wp-block-columns sr-news"><!-- wp:column {"width":"60%"} -->
+<div class="wp-block-column" style="flex-basis:60%"><!-- wp:heading {"className":"sr-eyebrow"} -->
 <h2 class="wp-block-heading sr-eyebrow" id="news-media">News &amp; media</h2>
 <!-- /wp:heading -->
 
@@ -434,10 +434,10 @@ $map = get_stylesheet_directory_uri() . '/img/scott-reef-map.svg';
 <h3 class="wp-block-heading sr-h3">Latest from the campaign</h3>
 <!-- /wp:heading -->
 
-<!-- wp:columns {"className":"sr-news"} -->
-<div class="wp-block-columns sr-news"><!-- wp:column {"width":"60%"} -->
-<div class="wp-block-column" style="flex-basis:60%"><!-- wp:query {"queryId":11,"query":{"perPage":4,"pages":0,"offset":0,"postType":"post","order":"desc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"","inherit":false},"className":"sr-news-list"} -->
+<!-- wp:query {"queryId":11,"query":{"perPage":4,"pages":0,"offset":0,"postType":"post","order":"desc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"","inherit":false},"className":"sr-news-list"} -->
 <div class="wp-block-query sr-news-list"><!-- wp:post-template -->
+<!-- wp:post-featured-image {"isLink":true,"sizeSlug":"thumbnail"} /-->
+
 <!-- wp:post-date {"format":"d M Y"} /-->
 
 <!-- wp:post-title {"level":4,"isLink":true} /-->
@@ -447,7 +447,13 @@ $map = get_stylesheet_directory_uri() . '/img/scott-reef-map.svg';
 
 <!-- wp:column {"width":"35%"} -->
 <div class="wp-block-column" style="flex-basis:35%"><!-- wp:group {"className":"sr-press"} -->
-<div class="wp-block-group sr-press"><!-- wp:paragraph {"className":"sr-eyebrow"} -->
+<div class="wp-block-group sr-press"><!-- wp:query {"queryId":13,"query":{"perPage":1,"pages":0,"offset":0,"postType":"post","order":"desc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"","inherit":false},"className":"sr-press-feature"} -->
+<div class="wp-block-query sr-press-feature"><!-- wp:post-template -->
+<!-- wp:post-featured-image {"isLink":true} /-->
+<!-- /wp:post-template --></div>
+<!-- /wp:query -->
+
+<!-- wp:paragraph {"className":"sr-eyebrow"} -->
 <p class="sr-eyebrow">For the media</p>
 <!-- /wp:paragraph -->
 
