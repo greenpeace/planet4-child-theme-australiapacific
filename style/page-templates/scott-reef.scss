@@ -21,7 +21,37 @@ body.page-template-scott-reef {
     max-width: calc(1240px + 24px);
   }
 
-  .page-content {
+  @media (min-width: 992px) {
+    #header {
+      --sr-nav-edge: calc((100vw - 960px) / 2 + 12px);
+
+      @media (min-width: 1200px) {
+        --sr-nav-edge: calc((100vw - 1140px) / 2 + 12px);
+      }
+
+      @media (min-width: 1264px) {
+        --sr-nav-edge: calc((100vw - 1240px) / 2);
+      }
+
+      .site-logo {
+        margin-inline-start: calc(var(--sr-nav-edge) - 12px);
+      }
+
+      #nav-menu > ul {
+        padding-inline-end: calc(var(--sr-nav-edge) - 28px);
+
+        > li:not(:last-child) {
+          margin-inline-end: 0;
+        }
+      }
+
+      .nav-hamburger-toggle {
+        padding-inline-start: 18px;
+      }
+    }
+  }
+
+  :is(.page-content, .editor-styles-wrapper) {
     font-family: var(--sr-body);
     font-size: 18px;
     line-height: 1.45;
@@ -53,10 +83,9 @@ body.page-template-scott-reef {
   .sr-news-list a,
   .sr-press a {
     border-bottom: 0;
-    background-image: none;
   }
 
-  .page-content [class*="sr-"] a:is(:hover, :focus),
+  :is(.page-content, .editor-styles-wrapper) [class*="sr-"] a:is(:hover, :focus),
   .page-content .sr-nav-email:is(:hover, :focus) {
     text-decoration: none;
     border-bottom-color: transparent !important;
@@ -118,7 +147,7 @@ body.page-template-scott-reef {
     }
   }
 
-  .page-content {
+  :is(.page-content, .editor-styles-wrapper) {
     .sr-eyebrow {
       font: 700 14px/1.5 var(--sr-body);
       text-transform: uppercase;
@@ -127,7 +156,7 @@ body.page-template-scott-reef {
     }
 
     .sr-h1 {
-      font: 700 117px/100px var(--sr-heading);
+      font: 400 117px/100px var(--sr-heading);
       text-transform: uppercase;
       color: var(--sr-white);
       margin: 0 0 40px;
@@ -139,7 +168,7 @@ body.page-template-scott-reef {
     }
 
     .sr-h3 {
-      font: 700 40px/1.08 var(--sr-heading);
+      font: 400 40px/1.08 var(--sr-heading);
       color: inherit;
       margin: 0 0 32px;
     }
@@ -154,13 +183,13 @@ body.page-template-scott-reef {
     }
 
     .sr-card__heading {
-      font: 700 20px/1.12 var(--sr-heading);
+      font: 400 20px/1.12 var(--sr-heading);
       color: inherit;
       margin: 0 0 12px;
     }
 
     .sr-card-header {
-      font: 600 30px/1.12 var(--sr-body);
+      font: 400 30px/1.12 var(--sr-body);
       margin: 0 0 24px;
     }
 
@@ -210,6 +239,7 @@ body.page-template-scott-reef {
       color: var(--sr-ink);
       font: 600 16px/1.2 var(--sr-body);
       text-align: left;
+      transition: background-color 0.2s ease;
 
       &::after {
         content: "↗";
@@ -227,13 +257,11 @@ body.page-template-scott-reef {
     }
 
     .wp-block-button.sr-small .wp-block-button__link {
-      min-height: 28px;
       width: 100%;
-      font-size: 13px;
     }
 
     .wp-block-button.is-style-cta .wp-block-button__link:is(:hover, :active, :focus) {
-      background: var(--sr-green);
+      background: color-mix(in srgb, var(--sr-green), #fff 30%);
       color: var(--sr-ink);
     }
 
@@ -249,6 +277,31 @@ body.page-template-scott-reef {
     padding-bottom: 80px;
     margin-bottom: 0;
     color: var(--sr-white);
+
+    .sr-hero__video {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      overflow: hidden;
+      pointer-events: none;
+      container-type: size;
+      opacity: 0;
+      transition: opacity 1s ease;
+
+      &.is-playing {
+        opacity: 1;
+      }
+
+      iframe {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: max(100cqw, 177.78cqh);
+        height: max(100cqh, 56.25cqw);
+        transform: translate(-50%, -50%);
+        border: 0;
+      }
+    }
 
     .sr-hero__cols {
       position: relative;
@@ -293,6 +346,7 @@ body.page-template-scott-reef {
       align-items: center;
       justify-content: space-between;
       gap: 24px;
+      height: 100%;
     }
 
     .sr-nav-email {
@@ -300,15 +354,28 @@ body.page-template-scott-reef {
       font: 600 14px/1.4 var(--sr-body);
       color: var(--sr-ink);
       text-decoration: underline;
+      background: linear-gradient(var(--color-background-link--hover), var(--color-background-link--hover)) bottom / 100% 0 no-repeat;
+      transition: background-size 0.15s ease;
+
+      &:is(:hover, :focus) {
+        background-size: 100% 100%;
+      }
     }
 
     .secondary-navigation-items {
       justify-content: flex-start !important;
       gap: 33px;
+      margin-block: 0;
       padding-inline-start: 0;
 
       li {
         padding-inline: 0;
+      }
+
+      @media (min-width: 992px) {
+        li a:not(:hover, .active) {
+          border-bottom: 3px solid transparent;
+        }
       }
     }
 
@@ -367,7 +434,7 @@ body.page-template-scott-reef {
 
     .sr-meta,
     .sr-card__heading,
-    .sr-text-button a {
+    .sr-text-button {
       color: var(--sr-blue);
     }
 
@@ -392,7 +459,7 @@ body.page-template-scott-reef {
     }
 
     .sr-card__title {
-      font: 600 30px/1.2 var(--sr-body);
+      font: 400 30px/1.2 var(--sr-body);
       margin: 0 0 24px;
     }
   }
@@ -407,8 +474,14 @@ body.page-template-scott-reef {
   }
 
   .sr-voices {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 360px), 1fr));
     gap: 24px;
     margin-bottom: 28px;
+
+    > .sr-voice {
+      margin: 0;
+    }
   }
 
   .sr-voice {
@@ -455,14 +528,41 @@ body.page-template-scott-reef {
   }
 
   .sr-carousel-wrap {
-    margin-inline: calc(50% - 50vw);
-    padding-inline: calc(50vw - 50%);
+    position: relative;
     margin-bottom: 30px;
-    overflow: hidden;
     cursor: grab;
 
-    .splide__track {
-      overflow: visible;
+    .splide__arrow {
+      position: absolute;
+      top: 50%;
+      z-index: 2;
+      width: 48px;
+      height: 48px;
+      padding: 0;
+      border: 0;
+      border-radius: 50%;
+      background: var(--white) url("/wp-content/themes/planet4-master-theme/images/chevron.svg") center / 28px 18px no-repeat;
+      box-shadow: 0 1px 8px rgb(0 0 0 / 20%);
+      cursor: pointer;
+      transform: translateY(-50%);
+
+      &:hover,
+      &:focus-visible {
+        background-color: var(--grey-200);
+      }
+
+      svg {
+        display: none;
+      }
+    }
+
+    .splide__arrow--prev {
+      left: max(-72px, calc((100% - 100vw) / 2 + 8px));
+      transform: translateY(-50%) rotate(180deg);
+    }
+
+    .splide__arrow--next {
+      right: max(-72px, calc((100% - 100vw) / 2 + 8px));
     }
 
     &.is-dragging {
@@ -501,9 +601,32 @@ body.page-template-scott-reef {
   }
 
   .sr-quicklinks {
-    gap: 24px;
-    padding: 32px 25px;
-    background: var(--sr-green);
+    gap: 8px;
+
+    > .wp-block-column {
+      position: relative;
+      padding: 32px 25px;
+      background: var(--sr-green);
+      transition: background-color 0.2s ease;
+
+      &:has(a:is(:hover, :focus-visible)) {
+        background: color-mix(in srgb, var(--sr-green), #fff 30%);
+      }
+
+      > :last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    .sr-large-link a {
+      background-image: none;
+    }
+
+    .sr-large-link a::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+    }
   }
 
   .sr-feature.wp-block-media-text {
@@ -559,19 +682,37 @@ body.page-template-scott-reef {
 
   .sr-news-list {
     .wp-block-post {
+      display: grid;
+      grid-template-columns: 120px 1fr;
+      grid-template-rows: auto 1fr;
+      column-gap: 24px;
       padding-bottom: 24px;
       margin-bottom: 32px;
       border-bottom: 1px solid var(--sr-line);
     }
 
+    .wp-block-post-featured-image {
+      grid-row: 1 / 3;
+      margin: 0;
+
+      img {
+        width: 120px;
+        height: 120px;
+        object-fit: cover;
+      }
+    }
+
     .wp-block-post-date {
+      grid-column: 2;
       font: 700 14px/1.5 var(--sr-body);
       text-transform: uppercase;
       margin-bottom: 12px;
     }
 
     .wp-block-post-title {
-      font: 600 22px/1.2 var(--sr-body);
+      grid-column: 2;
+      margin: 0;
+      font: 400 22px/1.2 var(--sr-body);
 
       a {
         color: var(--sr-ink);
@@ -588,6 +729,30 @@ body.page-template-scott-reef {
   .sr-press {
     padding: 32px 28px;
     background: var(--sr-line);
+
+    .sr-press-feature {
+      margin: -32px -28px 24px;
+
+      .wp-block-post-template {
+        margin: 0;
+        padding: 0;
+      }
+
+      .wp-block-post {
+        margin: 0;
+      }
+
+      .wp-block-post-featured-image {
+        margin: 0;
+      }
+
+      img {
+        display: block;
+        width: 100%;
+        aspect-ratio: 16 / 9;
+        object-fit: cover;
+      }
+    }
 
     .sr-card__heading {
       margin-bottom: 16px;
@@ -665,6 +830,35 @@ body.page-template-scott-reef {
 
     .sr-signup {
       padding: 32px 16px;
+    }
+  }
+}
+
+body.page-template-scott-reef .editor-styles-wrapper {
+  background: var(--sr-cream);
+
+  .is-root-container > .wp-block {
+    max-width: 1240px;
+  }
+
+  .is-root-container.is-root-container [class*="sr-"] p > a {
+    border-bottom: 0;
+    color: inherit;
+  }
+
+  .is-root-container > .sr-band {
+    max-width: none;
+    margin-inline: 0;
+    padding-inline: max(24px, calc((100% - 1240px) / 2));
+  }
+
+  .sr-carousel {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+
+    > * {
+      flex: 0 0 500px;
     }
   }
 }
