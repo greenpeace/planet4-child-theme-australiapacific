@@ -12,7 +12,7 @@
   --sr-body: "Work Sans", sans-serif;
 }
 
-body.page-template-scott-reef {
+.page-template-scott-reef {
   background: var(--sr-cream);
   overflow-x: clip;
 
@@ -68,7 +68,7 @@ body.page-template-scott-reef {
   }
 }
 
-body.page-template-scott-reef {
+.page-template-scott-reef {
   .sr-band,
   .sn-wrapper {
     margin-block: 0;
@@ -834,7 +834,7 @@ body.page-template-scott-reef {
   }
 }
 
-body.page-template-scott-reef .editor-styles-wrapper {
+.page-template-scott-reef .editor-styles-wrapper {
   background: var(--sr-cream);
 
   .is-root-container > .wp-block {
