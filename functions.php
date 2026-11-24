@@ -25,6 +25,15 @@ function enqueue_child_styles() {
     }
 }
 
+add_action('admin_enqueue_scripts', function () {
+    $acf_input = wp_scripts()->query('acf-input');
+
+    if ($acf_input && get_current_screen()?->is_block_editor()) {
+        // ACF 5.6 replaces wp.hooks, so it must load after the editor scripts.
+        $acf_input->deps[] = 'wp-edit-post';
+    }
+}, 100);
+
 function gpap_is_scott_reef_editor(): bool {
     return is_admin()
         && get_current_screen()?->is_block_editor()
@@ -35,6 +44,19 @@ add_action('enqueue_block_assets', function () {
     if (gpap_is_scott_reef_editor()) {
         $scott_reef_css = filectime(get_stylesheet_directory() . '/scott-reef.min.css');
         wp_enqueue_style('scott-reef-style', get_stylesheet_directory_uri() . '/scott-reef.min.css', [], $scott_reef_css);
+    }
+});
+
+add_action('enqueue_block_editor_assets', function () {
+    if (gpap_is_scott_reef_editor()) {
+        wp_add_inline_script('wp-blocks', <<<'JS'
+(() => {
+  const tag = () => document.querySelector('iframe[name="editor-canvas"]')
+    ?.contentDocument?.documentElement.classList.add('page-template-scott-reef');
+  new MutationObserver(tag).observe(document.documentElement, {childList: true, subtree: true});
+  document.addEventListener('load', tag, true);
+})();
+JS);
     }
 });
 
