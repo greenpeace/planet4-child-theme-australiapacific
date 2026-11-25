@@ -296,8 +296,8 @@
         position: absolute;
         top: 50%;
         left: 50%;
-        width: max(100cqw, 177.78cqh);
-        height: max(100cqh, 56.25cqw);
+        width: max(100cqw, 100cqh * var(--sr-video-ratio, 16 / 9));
+        height: max(100cqh, 100cqw / var(--sr-video-ratio, 16 / 9));
         transform: translate(-50%, -50%);
         border: 0;
       }

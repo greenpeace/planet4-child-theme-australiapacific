@@ -126,8 +126,20 @@ const mountHeroVideo = wrap => {
 
     const data = typeof event.data === 'string' ? JSON.parse(event.data) : event.data;
 
+    const send = message => frame.contentWindow.postMessage(JSON.stringify(message), origin);
+
     if (data.event === 'ready') {
-      frame.contentWindow.postMessage(JSON.stringify({method: 'addEventListener', value: 'playing'}), origin);
+      send({method: 'addEventListener', value: 'playing'});
+      send({method: 'getVideoWidth'});
+      send({method: 'getVideoHeight'});
+    }
+
+    if (data.method === 'getVideoWidth' || data.method === 'getVideoHeight') {
+      wrap.dataset[data.method] = data.value;
+
+      if (wrap.dataset.getVideoWidth && wrap.dataset.getVideoHeight) {
+        wrap.style.setProperty('--sr-video-ratio', wrap.dataset.getVideoWidth / wrap.dataset.getVideoHeight);
+      }
     }
 
     if (data.event === 'playing') {
